@@ -1,0 +1,76 @@
+--------- beginning of system
+--------- beginning of main
+03-15 14:13:13.387  5089  5089 I Unity   : onResume
+03-15 14:13:13.419  5089  5105 D Unity   : SetWindow 0 0xddb51808
+03-15 14:13:13.419  5089  5105 D Unity   : SetWindow 0 0xddb51808
+03-15 14:13:13.452  5089  5089 I Unity   : windowFocusChanged: true
+03-15 14:13:13.474  5089  5105 D Unity   : [VFS] Mount /data/app/com.Cking.MountainMen-1/base.apk
+03-15 14:13:13.505  5089  5105 I Unity   : SystemInfo CPU = ARMv7 VFPv3 NEON, Cores = 4, Memory = 2733mb
+03-15 14:13:13.505  5089  5105 I Unity   : SystemInfo ARM big.LITTLE configuration: 2 big (mask: 0xc), 2 little (mask: 0x3)
+03-15 14:13:13.506  5089  5105 I Unity   : ApplicationInfo com.Cking.MountainMen version 0.1 build 096c2bae-536a-4cd6-b125-e710dc3ce1c6
+03-15 14:13:13.506  5089  5105 I Unity   : Built from '2018.3/staging' branch, Version '2018.3.8f1 (fc0fe30d6d91)', Build type 'Development', Scripting Backend 'mono', CPU 'armeabi-v7a'
+03-15 14:13:13.506  5089  5105 D Unity   : [EGL] Attaching window :0xddb51808
+03-15 14:13:13.510  5089  5105 D Unity   : Mono path[0] = '/data/app/com.Cking.MountainMen-1/base.apk/assets/bin/Data/Managed'
+03-15 14:13:13.510  5089  5105 D Unity   : Mono config path = 'assets/bin/Data/Managed/etc'
+03-15 14:13:13.510  5089  5105 D Unity   : PlayerConnection initialized from /data/app/com.Cking.MountainMen-1/base.apk/assets/bin/Data (debug = 0)
+03-15 14:13:13.511  5089  5105 D Unity   : PlayerConnection initialized network socket : 0.0.0.0 55122
+03-15 14:13:13.511  5089  5105 D Unity   : PlayerConnection initialized unix socket : Unity-com.Cking.MountainMen
+03-15 14:13:13.513  5089  5105 D Unity   : Multi-casting "[IP] 0.0.0.0 [Port] 55122 [Flags] 2 [Guid] 1693538556 [EditorId] 3789534124 [Version] 1048832 [Id] AndroidPlayer(Oculus_Pacific@0.0.0.0) [Debug] 0 [PackageName] AndroidPlayer" to [225.0.0.222:54997]...
+03-15 14:13:13.513  5089  5105 D Unity   : Started listening to [0.0.0.0:55122]
+03-15 14:13:13.636  5089  5105 D Unity   : InitializeScriptEngine OK (0xca202f00)
+03-15 14:13:13.636  5089  5105 D Unity   : PlayerConnection already initialized - listening to [0.0.0.0:55122]
+03-15 14:13:13.658  5089  5105 D Unity   : Unable to lookup library path for 'libAudioPluginOculusSpatializer', native render plugin support disabled.
+03-15 14:13:13.658  5089  5105 E Unity   : Unable to find libAudioPluginOculusSpatializer
+03-15 14:13:13.661  5089  5105 D Unity   : PlayerInitEngineNoGraphics OK
+03-15 14:13:13.661  5089  5105 D Unity   : AndroidGraphics::Startup window =  0xddb51808
+03-15 14:13:13.661  5089  5105 D Unity   : [EGL] Attaching window :0xddb51808
+03-15 14:13:13.668  5089  5105 D Unity   : [EGL] Request: ES 3.1+AEP RGB0 000 0/0
+03-15 14:13:13.669  5089  5105 D Unity   : [EGL] Checking ES 3.1 support...
+03-15 14:13:13.671  5089  5105 D Unity   : [EGL] ES 3.1 support detected
+03-15 14:13:13.671  5089  5105 D Unity   : [EGL] Found: ID[1] ES 3.1+AEP RGB16 565 0/0
+03-15 14:13:13.671  5089  5105 D Unity   : GfxDevice: creating device client; threaded=1
+03-15 14:13:13.672  5089  5105 D Unity   : [EGL] Request: ES 3.1+AEP RGB0 000 0/0
+03-15 14:13:13.672  5089  5105 D Unity   : [EGL] Found: ID[1] ES 3.1+AEP RGB16 565 0/0
+03-15 14:13:13.672  5089  5105 D Unity   : [EGL] Request: ES 3.0 RGBA32 8888 0/0
+03-15 14:13:13.676  5089  5105 D Unity   : [EGL] Found: ID[9] ES 3.0 RGBA32 8888 0/0
+03-15 14:13:13.680  5089  5105 D Unity   : ANativeWindow: (2560/1440) RequestedResolution: (0/0) RenderingResolution: (0/0) EGLSurface: (2560/1440)
+03-15 14:13:13.685  5089  5105 D Unity   : Renderer: Adreno (TM) 530
+03-15 14:13:13.685  5089  5105 D Unity   : Vendor:   Qualcomm
+03-15 14:13:13.685  5089  5105 D Unity   : Version:  OpenGL ES 3.2 V@360.0 (GIT@2b8ed1c, Iea5f0bf7ba) (Date:12/18/18)
+03-15 14:13:13.685  5089  5105 D Unity   : GLES:     3
+03-15 14:13:13.685  5089  5105 D Unity   :  GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_EXT_texture_format_sRGB_override GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_EGL_i
+03-15 14:13:13.685  5089  5105 D Unity   : mage_external_wrap_modes GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_shader_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT
+03-15 14:13:13.685  5089  5105 D Unity   : _external_buffer GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shader_non_constant_global_initializers GL_QCOM_texture_foveated GL_QCOM_shader_framebuffer_fetch_noncoherent GL_QCOM_shader_framebuffer_fetch_rate GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_EGL_image_array GL_NV_shader_noperspective_interpolation GL_KHR_robust_buffer_access_behavior GL_EXT_EGL_image_storage GL_EXT_blend_func_extended GL_EXT_clip_control GL_OES_texture_view
+03-15 14:13:13.702  5089  5105 D Unity   : OPENGL LOG: Creating OpenGL ES 3.2 graphics device ; Context level  <OpenGL ES 3.1 AEP> ; Context handle -935588736
+03-15 14:13:13.703  5089  5105 D Unity   : [EGL] Attaching window :0xddb51808
+03-15 14:13:13.705  5089  5105 D Unity   : Requested framebuffer: resolution[2560x1440], rgba[8/8/8/8], depth+stencil[on], samples[1]
+03-15 14:13:13.705  5089  5105 D Unity   : Created framebuffer: resolution[2560x1440], rgba[8/8/8/8], depth+stencil[24/8], samples[0] 
+03-15 14:13:13.705  5089  5105 D Unity   : [EGL] Attaching window :0xddb51808
+03-15 14:13:13.706  5089  5105 D Unity   : Initialize engine version: 2018.3.8f1 (fc0fe30d6d91)
+03-15 14:13:13.754  5089  5105 D Unity   : Begin MonoManager ReloadAssembly
+03-15 14:13:14.214  5089  5105 D Unity   : - Completed reload, in  0.460 seconds
+03-15 14:13:14.515  5089  5105 D Unity   : PlayerInitEngineGraphics OK
+03-15 14:13:14.518  5089  5105 D Unity   : Found 4 native sensors
+03-15 14:13:16.620  5089  5105 D Unity   : UnloadTime: 3.527000 ms
+03-15 14:13:16.631  5089  5105 D Unity   : UUID: 5a21bd640af7c371 => bbb1c80727aeb6fb140c0e1ff94f1bbb
+03-15 14:13:16.689  5089  5105 D Unity   : Choreographer available: Enabling VSYNC timing
+03-15 14:13:16.728  5089  5113 E Unity   : java.net.UnknownHostException: Unable to resolve host "config.uca.cloud.unity3d.com": No address associated with hostname
+03-15 14:13:16.728  5089  5113 E Unity   :  
+03-15 14:13:16.728  5089  5113 E Unity   : (Filename: /Users/builduser/buildslave/unity/build/Platforms/Android/Modules/UnityWebRequest/Transports/TransportAndroid.cpp Line: 451)
+03-15 14:13:16.728  5089  5113 E Unity   : 
+03-15 14:13:16.925  5089  5114 E Unity   : java.net.UnknownHostException: Unable to resolve host "cdp.cloud.unity3d.com": No address associated with hostname
+03-15 14:13:16.925  5089  5114 E Unity   :  
+03-15 14:13:16.925  5089  5114 E Unity   : (Filename: /Users/builduser/buildslave/unity/build/Platforms/Android/Modules/UnityWebRequest/Transports/TransportAndroid.cpp Line: 451)
+03-15 14:13:16.925  5089  5114 E Unity   : 
+03-15 14:13:17.387  5089  5115 E Unity   : java.net.UnknownHostException: Unable to resolve host "cdp.cloud.unity3d.com": No address associated with hostname
+03-15 14:13:17.387  5089  5115 E Unity   :  
+03-15 14:13:17.387  5089  5115 E Unity   : (Filename: /Users/builduser/buildslave/unity/build/Platforms/Android/Modules/UnityWebRequest/Transports/TransportAndroid.cpp Line: 451)
+03-15 14:13:17.387  5089  5115 E Unity   : 
+03-15 14:13:19.385  5089  5116 E Unity   : java.net.UnknownHostException: Unable to resolve host "cdp.cloud.unity3d.com": No address associated with hostname
+03-15 14:13:19.385  5089  5116 E Unity   :  
+03-15 14:13:19.385  5089  5116 E Unity   : (Filename: /Users/builduser/buildslave/unity/build/Platforms/Android/Modules/UnityWebRequest/Transports/TransportAndroid.cpp Line: 451)
+03-15 14:13:19.385  5089  5116 E Unity   : 
+03-15 14:13:49.390  5089  5117 E Unity   : java.net.UnknownHostException: Unable to resolve host "cdp.cloud.unity3d.com": No address associated with hostname
+03-15 14:13:49.390  5089  5117 E Unity   :  
+03-15 14:13:49.390  5089  5117 E Unity   : (Filename: /Users/builduser/buildslave/unity/build/Platforms/Android/Modules/UnityWebRequest/Transports/TransportAndroid.cpp Line: 451)
+03-15 14:13:49.390  5089  5117 E Unity   : 
