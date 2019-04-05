@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BaseHitObject : MonoBehaviour, IHitable
 {
-
+    Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     public void Hit()
     {
-        throw new System.NotImplementedException();
+        //rigidbody.add
+        //Destroy(this.gameObject);
     }
 }
