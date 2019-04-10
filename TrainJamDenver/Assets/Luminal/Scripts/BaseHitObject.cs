@@ -26,6 +26,6 @@ public class BaseHitObject : MonoBehaviour, IHitable
     {
         //rigidbody.add
         //Destroy(this.gameObject);
-        Instantiate(hitPointsPrefab);
+        Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
     }
 }

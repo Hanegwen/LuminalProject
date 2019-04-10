@@ -20,7 +20,6 @@ public class PointsUI : MonoBehaviour
         hitParticle = transform.GetComponentInChildren<ParticleSystem>();
 
         pointsAnimating = true;
-        hitParticle.Stop(); //take this line out if/when particles are implemented
         Destroy(gameObject, 1);
     }
 
