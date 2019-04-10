@@ -14,7 +14,8 @@ public class DebugManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        //Input.
+        if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
         }

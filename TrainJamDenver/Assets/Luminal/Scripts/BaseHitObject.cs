@@ -24,8 +24,9 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     public void Hit()
     {
+        print("Wow2");
         //rigidbody.add
-        //Destroy(this.gameObject);
-        Instantiate(hitPointsPrefab);
+        Destroy(this.gameObject);
+        //Instantiate(hitPointsPrefab);
     }
 }
