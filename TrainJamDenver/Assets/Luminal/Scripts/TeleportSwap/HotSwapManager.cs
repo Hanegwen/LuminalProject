@@ -16,7 +16,7 @@ public class HotSwapManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RoomSwap(currentRoom);
+        //RoomSwap(currentRoom);
     }
 
     // Update is called once per frame

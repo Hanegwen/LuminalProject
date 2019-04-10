@@ -10,7 +10,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody.GetComponent<Rigidbody>();
+        //rigidbody.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
