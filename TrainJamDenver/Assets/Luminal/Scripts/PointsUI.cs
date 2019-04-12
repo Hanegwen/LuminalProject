@@ -14,6 +14,11 @@ public class PointsUI : MonoBehaviour
     bool pointsAnimating = false;
     float pointsTime = 0;
 
+    private void Awake()
+    {
+        this.gameObject.transform.parent = null;
+    }
+
     private void Start()
     {
         pointsText = transform.GetChild(0).gameObject;
@@ -40,5 +45,10 @@ public class PointsUI : MonoBehaviour
                 pointsTime = 0;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        return;
     }
 }
