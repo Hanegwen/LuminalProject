@@ -19,6 +19,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     AudioClip CompleteSound;
 
+    [SerializeField]
+    AudioClip HitSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,13 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayHitSound(Transform location)
+    {
+        EffectSounds.transform.position = location.position;
+        EffectSounds.clip = HitSound;
+        EffectSounds.Play();
     }
 
     public void BeginGame()

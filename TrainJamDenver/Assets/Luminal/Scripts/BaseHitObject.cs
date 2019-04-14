@@ -11,11 +11,15 @@ public class BaseHitObject : MonoBehaviour, IHitable
     public float ListNum;
 
     NodePlaneTeleportation nodePlaneTeleportation;
+
+    SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
         //rigidbody.GetComponent<Rigidbody>();
         nodePlaneTeleportation = FindObjectOfType<NodePlaneTeleportation>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -44,6 +48,8 @@ public class BaseHitObject : MonoBehaviour, IHitable
         {
             nodePlaneTeleportation.Node2.Remove(this.gameObject);
         }
+        soundManager.PlayHitSound(this.transform);
+
         Destroy(this.gameObject);
         //Instantiate(hitPointsPrefab);
     }
