@@ -13,6 +13,7 @@ public class PointsUI : MonoBehaviour
     ParticleSystem hitParticle;
     bool pointsAnimating = false;
     float pointsTime = 0;
+    Camera playerCamera;
 
     private void Awake()
     {
@@ -21,11 +22,12 @@ public class PointsUI : MonoBehaviour
 
     private void Start()
     {
+        playerCamera = GameObject.Find("CenterEyeAnchor").GetComponent<Camera>();
+
         pointsText = transform.GetChild(0).gameObject;
         hitParticle = transform.GetComponentInChildren<ParticleSystem>();
 
         pointsAnimating = true;
-        hitParticle.Stop(); //take this line out if/when particles are implemented
         Destroy(gameObject, 1);
     }
 
@@ -45,6 +47,12 @@ public class PointsUI : MonoBehaviour
                 pointsTime = 0;
             }
         }
+    }
+
+    private void LateUpdate()
+    {
+        pointsText.transform.LookAt(pointsText.transform.position + new Quaternion(0, playerCamera.transform.rotation.y, playerCamera.transform.rotation.z, playerCamera.transform.rotation.w)
+            * Vector3.forward, playerCamera.transform.rotation * Vector3.up);
     }
 
     private void OnDestroy()

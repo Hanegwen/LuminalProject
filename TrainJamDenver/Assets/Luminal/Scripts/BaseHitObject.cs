@@ -50,7 +50,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         }
         soundManager.PlayHitSound(this.transform);
 
+        Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
         Destroy(this.gameObject);
-        //Instantiate(hitPointsPrefab);
     }
 }
