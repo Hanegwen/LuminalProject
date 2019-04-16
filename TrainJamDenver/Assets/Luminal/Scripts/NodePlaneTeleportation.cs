@@ -16,36 +16,36 @@ public class NodePlaneTeleportation : MonoBehaviour
 
     private int nextNodeIndex = 1;
 
-    [SerializeField]
-    public List<GameObject> Node0;
+    //[SerializeField]
+    //public List<GameObject> Node0;
 
-    [SerializeField]
-    public List<GameObject> Node1;
+    //[SerializeField]
+    //public List<GameObject> Node1;
 
-    [SerializeField]
-    public List<GameObject> Node2;
+    //[SerializeField]
+    //public List<GameObject> Node2;
 
-    OVRManager player;
+    //OVRManager player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<OVRManager>();
+        //player = FindObjectOfType<OVRManager>();
 
-        foreach(GameObject node in Node0)
-        {
-            node.GetComponent<BaseHitObject>().ListNum = 0;
-        }
+        //foreach(GameObject node in Node0)
+        //{
+        //    node.GetComponent<BaseHitObject>().ListNum = 0;
+        //}
 
-        foreach (GameObject node in Node1)
-        {
-            node.GetComponent<BaseHitObject>().ListNum = 1;
-        }
+        //foreach (GameObject node in Node1)
+        //{
+        //    node.GetComponent<BaseHitObject>().ListNum = 1;
+        //}
 
-        foreach(GameObject node in Node2)
-        {
-            node.GetComponent<BaseHitObject>().ListNum = 2;
-        }
+        //foreach(GameObject node in Node2)
+        //{
+        //    node.GetComponent<BaseHitObject>().ListNum = 2;
+        //}
     }
 
     void Awake()
@@ -56,26 +56,26 @@ public class NodePlaneTeleportation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(nextNodeIndex - 1 == 0)
-        {
-            if(Node0.Count == 0)
-            {
-                TeleportToNextNode();
-            }
-        }
+        //if(nextNodeIndex - 1 == 0)
+        //{
+        //    if(Node0.Count == 0)
+        //    {
+        //        TeleportToNextNode();
+        //    }
+        //}
 
-        if(nextNodeIndex - 1 == 1)
-        {
-            if(Node1.Count == 0)
-            {
-                TeleportToNextNode();
-            }
-        }
+        //if(nextNodeIndex - 1 == 1)
+        //{
+        //    if(Node1.Count == 0)
+        //    {
+        //        TeleportToNextNode();
+        //    }
+        //}
     }
 
     public void TeleportToNextNode()
     {
-        player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
+        this.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, this.transform.position.y, nodes[nextNodeIndex].transform.position.z);
         nextNodeIndex++;
 
         if (nextNodeIndex >= nodes.Count)
