@@ -85,7 +85,7 @@ public class NodePlaneTeleportation : MonoBehaviour
             nextNodeIndex = 0;
         }
         
-        switch(nextNodeIndex)
+        switch(nextNodeIndex - 1)
         {
             case 1:
                 colorChanger.ColorTransition(-22, 1, 0.7735f);
@@ -102,7 +102,7 @@ public class NodePlaneTeleportation : MonoBehaviour
             default:
                 break;
         }
-        print(nextNodeIndex);
+
         Debug.Log("Teleported to next node");
     }
 }

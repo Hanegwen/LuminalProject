@@ -15,6 +15,8 @@ public class ChangeColors : MonoBehaviour
     {
         volume.profile.TryGetSettings(out colorGradingLayer);
         volume.profile.TryGetSettings(out bloomLayer);
+
+        ColorTransition(-22, 1, 0.7735f);
     }
 
     private void Update()

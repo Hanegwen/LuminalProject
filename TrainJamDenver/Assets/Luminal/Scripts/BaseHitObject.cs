@@ -26,14 +26,6 @@ public class BaseHitObject : MonoBehaviour, IHitable
         scoreManager = FindObjectOfType<ScoreManager>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Hit();
-        }
-    }
-
     public void Hit()
     {
         print("Wow2");
