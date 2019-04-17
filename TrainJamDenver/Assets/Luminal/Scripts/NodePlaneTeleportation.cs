@@ -26,11 +26,13 @@ public class NodePlaneTeleportation : MonoBehaviour
     public List<GameObject> Node2;
 
     OVRManager player;
+    ChangeColors colorChanger;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<OVRManager>();
+        colorChanger = FindObjectOfType<ChangeColors>();
 
         foreach(GameObject node in Node0)
         {
@@ -82,7 +84,25 @@ public class NodePlaneTeleportation : MonoBehaviour
         {
             nextNodeIndex = 0;
         }
-
+        
+        switch(nextNodeIndex)
+        {
+            case 1:
+                colorChanger.ColorTransition(-22, 1, 0.7735f);
+                break;
+            case 2:
+                colorChanger.ColorTransition(50, 3, 0.7735f);
+                break;
+            case 3:
+                colorChanger.ColorTransition(70, 3, 0.9245f);
+                break;
+            case 4:
+                colorChanger.ColorTransition(90, 4, 0.9245f);
+                break;
+            default:
+                break;
+        }
+        print(nextNodeIndex);
         Debug.Log("Teleported to next node");
     }
 }

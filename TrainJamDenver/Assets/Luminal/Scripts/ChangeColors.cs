@@ -20,25 +20,20 @@ public class ChangeColors : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ColorTransition(-22, 1);
-            pillarMat.color = new Color(0.7735f, 0.7735f, 0.7735f, 1);
-        }
+            ColorTransition(-22, 1, 0.7735f);
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            ColorTransition(50, 3);
+            ColorTransition(50, 3, 0.7735f);
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            ColorTransition(70, 3);
+            ColorTransition(70, 3, 0.9245f);
         if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ColorTransition(90, 4);
-            pillarMat.color = new Color(0.9245f, 0.9245f, 0.9245f, 1);
-        }
+            ColorTransition(90, 4, 0.9245f);
 
     }
 
-    public void ColorTransition(float CGSaturation, float BLIntensity)
+    public void ColorTransition(float CGSaturation, float BLIntensity, float pillarMatColor)
     {
         colorGradingLayer.saturation.value = CGSaturation;
         bloomLayer.intensity.value = BLIntensity;
+        pillarMat.color = new Color(pillarMatColor, pillarMatColor, pillarMatColor);
     }
 }

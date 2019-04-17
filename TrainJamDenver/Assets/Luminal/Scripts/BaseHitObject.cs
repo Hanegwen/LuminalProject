@@ -26,10 +26,9 @@ public class BaseHitObject : MonoBehaviour, IHitable
         scoreManager = FindObjectOfType<ScoreManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             Hit();
         }
