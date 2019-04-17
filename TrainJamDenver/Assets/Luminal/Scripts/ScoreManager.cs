@@ -22,11 +22,17 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            UpdateScore(1f);
+        }
     }
 
     public void UpdateScore(float ScoreToAdd)
     {
+        currentscore += ScoreToAdd;
 
+        WallText.text = currentscore.ToString();
     }
 }

@@ -13,13 +13,17 @@ public class BaseHitObject : MonoBehaviour, IHitable
     NodePlaneTeleportation nodePlaneTeleportation;
 
     SoundManager soundManager;
+    ScoreManager scoreManager;
 
+    [SerializeField]
+    float scoreAdder = 5;
     // Start is called before the first frame update
     void Start()
     {
         //rigidbody.GetComponent<Rigidbody>();
         nodePlaneTeleportation = FindObjectOfType<NodePlaneTeleportation>();
         soundManager = FindObjectOfType<SoundManager>();
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -50,6 +54,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         }
         soundManager.PlayHitSound(this.transform);
 
+        scoreManager.UpdateScore(scoreAdder);
         Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
         Destroy(this.gameObject);
     }
