@@ -55,13 +55,16 @@ public class HittableObjectManager : MonoBehaviour
 
         foreach (GameObject go in hittableObjects)
         {
+            Debug.Log("HittableObjectFound");
+
             if (go.activeInHierarchy)
             {
                 totalActive++;
+                Debug.Log("HittableObjectActive");
             }
         }
 
-        if ((float)((float)totalActive/(float)hittableObjects.Length + 1) <= TimerThreathold)
+        if ((float)((float)totalActive/((float)hittableObjects.Length + 1)) <= TimerThreathold)
         {
             RaiseThreaholdReached();
             Debug.Log("Threashold reached");

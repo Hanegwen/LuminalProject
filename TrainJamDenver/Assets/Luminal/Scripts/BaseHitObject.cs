@@ -62,6 +62,8 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
         Instantiate(hitPointsPrefab);
 
+        this.gameObject.SetActive(false);
+
         Destroy(this.gameObject);
         //Instantiate(hitPointsPrefab);
     }
