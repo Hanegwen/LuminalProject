@@ -58,6 +58,11 @@ public class NodePlaneTeleportation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            TeleportToNextNode();
+        }
+
         if(nextNodeIndex - 1 == 0)
         {
             if(Node0.Count == 0)
@@ -78,6 +83,7 @@ public class NodePlaneTeleportation : MonoBehaviour
     public void TeleportToNextNode()
     {
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
+        player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
         nextNodeIndex++;
 
         if (nextNodeIndex >= nodes.Count)
@@ -85,7 +91,7 @@ public class NodePlaneTeleportation : MonoBehaviour
             nextNodeIndex = 0;
         }
         
-        switch(nextNodeIndex - 1)
+        switch(nextNodeIndex)
         {
             case 1:
                 colorChanger.ColorTransition(-22, 1, 0.7735f);

@@ -7,6 +7,7 @@ public class testscript : MonoBehaviour
 {
     public GameObject prefab;
     int on = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
