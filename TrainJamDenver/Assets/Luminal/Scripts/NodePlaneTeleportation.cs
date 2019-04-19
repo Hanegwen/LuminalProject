@@ -53,8 +53,11 @@ public class NodePlaneTeleportation : MonoBehaviour
     void Update()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (nextNodeIndex - 1 == 0)
 =======
+=======
+>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
         if (Input.GetKeyDown(KeyCode.D))
         {
             TeleportToNextNode();
@@ -87,6 +90,9 @@ public class NodePlaneTeleportation : MonoBehaviour
 =======
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
         player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
+<<<<<<< HEAD
+>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
+=======
 >>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
         nextNodeIndex++;
 
