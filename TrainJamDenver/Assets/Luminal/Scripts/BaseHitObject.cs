@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class BaseHitObject : MonoBehaviour, IHitable
     Rigidbody rigidbody;
     public GameObject hitPointsPrefab;
 
+    public delegate void HitEventHandler(object sender, EventArgs e);
+    public event HitEventHandler HitEvent;
 
     public float ListNum;
 
@@ -22,6 +25,16 @@ public class BaseHitObject : MonoBehaviour, IHitable
     {
         scoreAdder = 10;
         //rigidbody.GetComponent<Rigidbody>();
+
+        //this.tag = "HittableObject";
+
+        //nodePlaneTeleportation = FindObjectOfType<NodePlaneTeleportation>();
+    }
+
+    private void Awake()
+    {
+        this.tag = "HittableObject";
+
         nodePlaneTeleportation = FindObjectOfType<NodePlaneTeleportation>();
         soundManager = FindObjectOfType<SoundManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
@@ -32,6 +45,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         print("Wow2");
         //rigidbody.add
 
+<<<<<<< HEAD
         if(ListNum == 0)
         {
             nodePlaneTeleportation.Node0.Remove(this.gameObject);
@@ -48,6 +62,37 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
         scoreManager.UpdateScore(scoreAdder);
         Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
+=======
+        //if(ListNum == 0)
+        //{
+        //    nodePlaneTeleportation.Node0.Remove(this.gameObject);
+        //}
+        //else if(ListNum == 1)
+        //{
+        //    nodePlaneTeleportation.Node1.Remove(this.gameObject);
+        //}
+        //else if(ListNum == 2)
+        //{
+        //    nodePlaneTeleportation.Node2.Remove(this.gameObject);
+        //}
+
+        RaiseHitEvent();
+
+        Instantiate(hitPointsPrefab);
+
+        this.gameObject.SetActive(false);
+
+>>>>>>> JakeTestEnv
         Destroy(this.gameObject);
+    }
+
+    public void RaiseHitEvent()
+    {
+        Debug.Log(HitEvent);
+        if (HitEvent != null)
+        {
+            HitEvent(this, null);
+            Debug.Log("HitEvent Raised");
+        }
     }
 }
