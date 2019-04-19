@@ -15,11 +15,12 @@ public class BaseHitObject : MonoBehaviour, IHitable
     SoundManager soundManager;
     ScoreManager scoreManager;
 
-    [SerializeField]
-    float scoreAdder = 5;
+
+    float scoreAdder;
     // Start is called before the first frame update
     void Start()
     {
+        scoreAdder = 10;
         //rigidbody.GetComponent<Rigidbody>();
         nodePlaneTeleportation = FindObjectOfType<NodePlaneTeleportation>();
         soundManager = FindObjectOfType<SoundManager>();

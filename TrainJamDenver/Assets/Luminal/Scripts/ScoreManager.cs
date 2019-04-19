@@ -29,10 +29,16 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]
     float DelayForReversal = 2;
+
+    [SerializeField]
+    List<Vector3> ScoreTextTransform = new List<Vector3>();
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (TextMeshPro text in WallText)
+        {
+            ScoreTextTransform.Add(text.transform.position);
+        }
     }
 
     // Update is called once per frame
@@ -47,16 +53,18 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore(float ScoreToAdd)
     {
-
+        int position = 0;
+        currentscore += ScoreToAdd;
         foreach (TextMeshPro wall in WallText)
         {
-            Vector3 baseLocation = wall.transform.position;
-            currentscore += ScoreToAdd;
+            //Vector3 baseLocation = wall.transform.position;
+            
             wall.transform.DOJump(new Vector3(wall.transform.position.x - MoveText, wall.transform.position.y, wall.transform.position.z - MoveText), jumpPower, numJumps, duration);
             wall.text = currentscore.ToString();
 
 
-            wall.transform.DOJump(baseLocation, jumpPower, numJumps, duration).SetDelay(DelayForReversal);
+            wall.transform.DOJump(ScoreTextTransform[position], jumpPower, numJumps, duration).SetDelay(DelayForReversal);
+            position++;
         }
     }
 }
