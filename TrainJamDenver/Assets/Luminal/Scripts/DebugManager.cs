@@ -15,9 +15,9 @@ public class DebugManager : MonoBehaviour
     void Update()
     {
         //Input.
-        if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
-        }
+        //if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0)
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        //}
     }
 }

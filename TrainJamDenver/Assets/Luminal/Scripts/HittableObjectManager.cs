@@ -12,6 +12,8 @@ public class HittableObjectManager : MonoBehaviour
     public delegate void ThreatholdReachedEventHandler(object sender, EventArgs e);
     public event ThreatholdReachedEventHandler ThreatholdReached;
 
+    public int currentGroup = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,19 +54,27 @@ public class HittableObjectManager : MonoBehaviour
         Debug.Log("Determine Percentage Deactivated");
 
         int totalActive = 0;
+        int totalInGroup = 0;
 
         foreach (GameObject go in hittableObjects)
         {
             Debug.Log("HittableObjectFound");
 
-            if (go.activeInHierarchy)
+            BaseHitObject bho = go.GetComponent<BaseHitObject>();
+
+            if (go.activeInHierarchy && bho.group == currentGroup)
             {
                 totalActive++;
                 Debug.Log("HittableObjectActive");
             }
+
+            if (bho.group == currentGroup)
+            {
+                totalInGroup++;
+            }
         }
 
-        if ((float)((float)totalActive/((float)hittableObjects.Length + 1)) <= TimerThreathold)
+        if ((float)((float)totalActive / (float)totalInGroup) <= TimerThreathold)
         {
             RaiseThreaholdReached();
             Debug.Log("Threashold reached");
@@ -73,7 +83,7 @@ public class HittableObjectManager : MonoBehaviour
 
     void RaiseThreaholdReached()
     {
-        if(ThreatholdReached != null)
+        if (ThreatholdReached != null)
         {
             ThreatholdReached(this, null);
         }

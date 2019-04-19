@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class BaseHitObject : MonoBehaviour, IHitable
 {
-    Rigidbody rigidbody;
     public GameObject hitPointsPrefab;
+
+    [HideInInspector]
+    public int group;
 
     public delegate void HitEventHandler(object sender, EventArgs e);
     public event HitEventHandler HitEvent;
@@ -42,47 +44,37 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     public void Hit()
     {
-        print("Wow2");
+        //print("Wow2");
         //rigidbody.add
 
-//<//<<<<<< HEAD
-        if(ListNum == 0)
+
+        //<<<<<<< HEAD
+        if (ListNum == 0)
         {
             nodePlaneTeleportation.Node0.Remove(this.gameObject);
         }
-        else if(ListNum == 1)
+        else if (ListNum == 1)
         {
             nodePlaneTeleportation.Node1.Remove(this.gameObject);
         }
-        else if(ListNum == 2)
+        else if (ListNum == 2)
         {
             nodePlaneTeleportation.Node2.Remove(this.gameObject);
         }
+
         soundManager.PlayHitSound(this.transform);
 
         scoreManager.UpdateScore(scoreAdder);
         Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
-//=======
-        //if(ListNum == 0)
-        //{
-        //    nodePlaneTeleportation.Node0.Remove(this.gameObject);
-        //}
-        //else if(ListNum == 1)
-        //{
-        //    nodePlaneTeleportation.Node1.Remove(this.gameObject);
-        //}
-        //else if(ListNum == 2)
-        //{
-        //    nodePlaneTeleportation.Node2.Remove(this.gameObject);
-        //}
 
-        RaiseHitEvent();
+
+        //RaiseHitEvent();
 
         Instantiate(hitPointsPrefab);
 
         this.gameObject.SetActive(false);
 
-//>>>>>>> JakeTestEnv
+        //>>>>>>> JakeTestEnv
         Destroy(this.gameObject);
     }
 
