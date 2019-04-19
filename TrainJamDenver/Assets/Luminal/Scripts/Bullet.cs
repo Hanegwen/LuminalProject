@@ -4,37 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
-    bool canPopUp = true;
-
-    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canPopUp)
-        {
-            if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || Input.GetKeyDown(KeyCode.W))
-            {
-                animator.SetBool("IsExtending", true);
-                print(animator.GetBool("IsExtending"));
-                canPopUp = false;
-                StartCoroutine(Recharge());
-                //Instantiate(prefab, transform.position, transform.rotation);
-            }
-        }
-        else
-        {
-            animator.SetBool("IsExtending", false);
-
-        }
-
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -54,11 +33,5 @@ public class Bullet : MonoBehaviour
         {
             other.gameObject.GetComponent<IHitable>().Hit();
         }
-    }
-
-    IEnumerator Recharge()
-    {
-        yield return new WaitForSeconds(.5f);
-        canPopUp = true;
     }
 }

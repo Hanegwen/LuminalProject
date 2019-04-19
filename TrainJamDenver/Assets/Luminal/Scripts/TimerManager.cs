@@ -48,8 +48,6 @@ public class TimerManager : MonoBehaviour
             ResetSecondaryTimer();
             RunSecondaryTimer = false;
 
-            hom.currentGroup++;
-
             RaiseTimerRunDown();
 
             Debug.Log("TimerRunDown");
