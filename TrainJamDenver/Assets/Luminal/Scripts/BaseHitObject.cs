@@ -45,7 +45,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         print("Wow2");
         //rigidbody.add
 
-<<<<<<< HEAD
+//<//<<<<<< HEAD
         if(ListNum == 0)
         {
             nodePlaneTeleportation.Node0.Remove(this.gameObject);
@@ -62,7 +62,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
         scoreManager.UpdateScore(scoreAdder);
         Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
-=======
+//=======
         //if(ListNum == 0)
         //{
         //    nodePlaneTeleportation.Node0.Remove(this.gameObject);
@@ -82,7 +82,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
         this.gameObject.SetActive(false);
 
->>>>>>> JakeTestEnv
+//>>>>>>> JakeTestEnv
         Destroy(this.gameObject);
     }
 
