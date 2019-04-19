@@ -62,7 +62,7 @@ public class ScoreManager : MonoBehaviour
             wall.transform.DOJump(new Vector3(wall.transform.position.x - MoveText, wall.transform.position.y, wall.transform.position.z - MoveText), jumpPower, numJumps, duration);
             wall.text = currentscore.ToString();
 
-
+            wall.transform.DOScale(0.3f, 0.5f);
             wall.transform.DOJump(ScoreTextTransform[position], jumpPower, numJumps, duration).SetDelay(DelayForReversal);
             position++;
         }
