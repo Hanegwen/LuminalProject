@@ -7,6 +7,7 @@ public class testscript : MonoBehaviour
 {
     public GameObject prefab;
     int on = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class testscript : MonoBehaviour
     {
         if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0)
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            //Instantiate(prefab, transform.position, transform.rotation);
         }
     }
 }

@@ -26,15 +26,13 @@ public class NodePlaneTeleportation : MonoBehaviour
     public List<GameObject> Node2;
 
     OVRManager player;
-    ChangeColors colorChanger;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<OVRManager>();
-        colorChanger = FindObjectOfType<ChangeColors>();
 
-        foreach(GameObject node in Node0)
+        foreach (GameObject node in Node0)
         {
             node.GetComponent<BaseHitObject>().ListNum = 0;
         }
@@ -44,31 +42,38 @@ public class NodePlaneTeleportation : MonoBehaviour
             node.GetComponent<BaseHitObject>().ListNum = 1;
         }
 
-        foreach(GameObject node in Node2)
+        foreach (GameObject node in Node2)
         {
             node.GetComponent<BaseHitObject>().ListNum = 2;
         }
     }
 
-    void Awake()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(nextNodeIndex - 1 == 0)
+<<<<<<< HEAD
+        if (nextNodeIndex - 1 == 0)
+=======
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            if(Node0.Count == 0)
+            TeleportToNextNode();
+        }
+
+        if(nextNodeIndex - 1 == 0)
+>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
+        {
+            //print("**********");
+            if (Node0.Count == 0)
             {
+                //print("&&&&&&&&&&&&&&&&&&&");
                 TeleportToNextNode();
             }
         }
 
-        if(nextNodeIndex - 1 == 1)
+        if (nextNodeIndex - 1 == 1)
         {
-            if(Node1.Count == 0)
+            if (Node1.Count == 0)
             {
                 TeleportToNextNode();
             }
@@ -77,15 +82,22 @@ public class NodePlaneTeleportation : MonoBehaviour
 
     public void TeleportToNextNode()
     {
+<<<<<<< HEAD
+        player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, this.transform.position.y, nodes[nextNodeIndex].transform.position.z);
+=======
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
+        player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
+>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
         nextNodeIndex++;
 
         if (nextNodeIndex >= nodes.Count)
         {
             nextNodeIndex = 0;
         }
+<<<<<<< HEAD
+=======
         
-        switch(nextNodeIndex - 1)
+        switch(nextNodeIndex)
         {
             case 1:
                 colorChanger.ColorTransition(-22, 1, 0.7735f);
@@ -102,6 +114,7 @@ public class NodePlaneTeleportation : MonoBehaviour
             default:
                 break;
         }
+>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
 
         Debug.Log("Teleported to next node");
     }
