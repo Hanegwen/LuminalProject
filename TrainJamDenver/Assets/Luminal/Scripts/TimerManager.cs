@@ -42,10 +42,16 @@ public class TimerManager : MonoBehaviour
 
         if (SecondaryTimer <= 0 || MainTimer <= 0)
         {
-            RaiseTimerRunDown();
-        }
+            ResetMainTimer();
+            RunMainTimer = false;
 
-        Debug.Log(SecondaryTimer);
+            ResetSecondaryTimer();
+            RunSecondaryTimer = false;
+
+            RaiseTimerRunDown();
+
+            Debug.Log("TimerRunDown");
+        }
     }
 
     void OnThreatholdReached(object source, EventArgs e)
