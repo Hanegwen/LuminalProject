@@ -8,7 +8,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
     public GameObject hitPointsPrefab;
 
     [HideInInspector]
-    public int group;
+    public int group;       //Group this object is tested with in HittableObjectManager
 
     public delegate void HitEventHandler(object sender, EventArgs e);
     public event HitEventHandler HitEvent;
@@ -68,7 +68,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
 
 
-        //RaiseHitEvent();
+        RaiseHitEvent();
 
         Instantiate(hitPointsPrefab);
 
@@ -84,7 +84,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         if (HitEvent != null)
         {
             HitEvent(this, null);
-            Debug.Log("HitEvent Raised");
+            //Debug.Log("HitEvent Raised");
         }
     }
 }

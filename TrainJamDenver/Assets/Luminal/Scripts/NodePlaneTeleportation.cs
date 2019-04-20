@@ -124,6 +124,6 @@ public class NodePlaneTeleportation : MonoBehaviour
         }
 //>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
 
-        Debug.Log("Teleported to next node");
+        //Debug.Log("Teleported to next node");
     }
 }

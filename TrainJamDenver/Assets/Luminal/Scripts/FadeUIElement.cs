@@ -21,14 +21,7 @@ public class FadeUIElement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //cg = this.GetComponent<CanvasGroup>();
 
-        //if (cg == null)
-        //{
-        //    Debug.Log("Warning: No CanvasGroup Found");
-        //}
-
-        ////FadeIn(0.0025f);
     }
 
     private void Awake()
@@ -45,16 +38,7 @@ public class FadeUIElement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (cg.alpha <= 0f)
-        //{
-        //    FadeIn(0.0025f);
-        //}
-        //if (cg.alpha >= 1)
-        //{
-        //    FadeOut(0.0025f);
-        //}
 
-        //Debug.Log(cg.alpha);
     }
 
     public void FadeIn(float stepPerFrame)
@@ -62,18 +46,17 @@ public class FadeUIElement : MonoBehaviour
         StartCoroutine(FadeInCoroutine(stepPerFrame));
     }
 
+    //Fades a UIElement in
     IEnumerator FadeInCoroutine(float stepPerFrame)
     {
         while (cg.alpha < 1)
         {
             cg.alpha += stepPerFrame;
-            //Debug.Log("FadeIn" + cg.alpha);
 
             if (cg.alpha >= 1 - stepPerFrame
                 && cg.alpha != 1)
             {
                 cg.alpha = 1;
-                //Debug.Log("FadeIn hit!");
                 break;
             }
 
@@ -100,21 +83,17 @@ public class FadeUIElement : MonoBehaviour
         StartCoroutine(FadeOutCoroutine(stepPerFrame));
     }
 
+    //Fades a UIElement out
     IEnumerator FadeOutCoroutine(float stepPerFrame)
     {
         while (cg.alpha > 0)
         {
-            //float a = Mathf.Lerp(0, 1, stepPerFrame);
             cg.alpha -= stepPerFrame;
-            //Debug.Log(cg.alpha);
-
-            //Debug.Log("Lerp Val: " + a);
 
             if (cg.alpha <= stepPerFrame
                 && cg.alpha != 0)
             {
                 cg.alpha = 0;
-                //Debug.Log("hit!");
                 break;
             }
 

@@ -9,9 +9,11 @@ public class TimerManager : MonoBehaviour
     public float MainTimer;
     public float SecondaryTimer;
 
+    //The default starting times of the main and secondary timers
     public float MainTimerStartTime;
     public float SecondaryTimerStartTime;
 
+    //Booleans that when true run down the corresponding timer
     public bool RunMainTimer = false;
     public bool RunSecondaryTimer = false;
 
@@ -25,7 +27,7 @@ public class TimerManager : MonoBehaviour
     {
         hom = this.GetComponent<HittableObjectManager>();
 
-        hom.ThreatholdReached += OnThreatholdReached;
+        hom.ThreatholdReached += OnThreatholdReached;       //Assigns OnThreasholdReached to ThreasholdReached
 
         MainTimer = MainTimerStartTime;
         SecondaryTimer = SecondaryTimerStartTime;
@@ -40,19 +42,22 @@ public class TimerManager : MonoBehaviour
         if (RunSecondaryTimer)
             SecondaryTimer -= Time.deltaTime;
 
+        //Checks if either timer has run down and, if one has, resets them, moves on to the next group, and raises and event
         if (SecondaryTimer <= 0 || MainTimer <= 0)
         {
+            //Reset and stop both the main and secondary timers
             ResetMainTimer();
             RunMainTimer = false;
 
             ResetSecondaryTimer();
             RunSecondaryTimer = false;
 
+            //Go to next group of HittableObjects to test for
             hom.currentGroup++;
 
             RaiseTimerRunDown();
 
-            Debug.Log("TimerRunDown");
+            //Debug.Log("TimerRunDown");
         }
     }
 
