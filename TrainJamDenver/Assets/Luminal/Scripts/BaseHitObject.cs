@@ -61,6 +61,10 @@ public class BaseHitObject : MonoBehaviour, IHitable
         {
             nodePlaneTeleportation.Node2.Remove(this.gameObject);
         }
+        else if (ListNum == 3)
+        {
+            nodePlaneTeleportation.Node3.Remove(this.gameObject);
+        }
 
         soundManager.PlayHitSound(this.transform);
 
