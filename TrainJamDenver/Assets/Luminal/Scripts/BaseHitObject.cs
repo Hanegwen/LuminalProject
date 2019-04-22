@@ -74,7 +74,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
         RaiseHitEvent();
 
-        Instantiate(hitPointsPrefab);
+        //Instantiate(hitPointsPrefab);
 
         this.gameObject.SetActive(false);
 

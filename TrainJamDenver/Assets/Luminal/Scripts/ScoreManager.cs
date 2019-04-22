@@ -47,8 +47,10 @@ public class ScoreManager : MonoBehaviour
     
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            UpdateScore(1f);
+            UpdateScore(10f);
         }
+
+        
     }
 
     public void UpdateScore(float ScoreToAdd)
@@ -58,13 +60,14 @@ public class ScoreManager : MonoBehaviour
         foreach (TextMeshPro wall in WallText)
         {
             //Vector3 baseLocation = wall.transform.position;
-            
-            wall.transform.DOJump(new Vector3(wall.transform.position.x - MoveText, wall.transform.position.y, wall.transform.position.z - MoveText), jumpPower, numJumps, duration);
+
+            //wall.transform.DOJump(new Vector3(wall.transform.localPosition.x - MoveText, wall.transform.localPosition.y, wall.transform.localPosition.z - MoveText), jumpPower, numJumps, duration);
+            //wall.animator.setbool
             wall.text = currentscore.ToString();
+            wall.GetComponent<Animator>().Play("ScoreTextIncrease");// SetBool("HasIncreased", true);
 
-
-            wall.transform.DOJump(ScoreTextTransform[position], jumpPower, numJumps, duration).SetDelay(DelayForReversal);
-            position++;
+            //wall.transform.DOJump(ScoreTextTransform[position], jumpPower, numJumps, duration).SetDelay(DelayForReversal);
+            //position++;
         }
     }
 }

@@ -96,7 +96,7 @@ public class NodePlaneTeleportation : MonoBehaviour
     public void TeleportToNextNode()
     {
 //<<<<<<< HEAD
-        player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, this.transform.position.y, nodes[nextNodeIndex].transform.position.z);
+        //player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, this.transform.position.y, nodes[nextNodeIndex].transform.position.z);
 //=======
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
         player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
@@ -106,7 +106,7 @@ public class NodePlaneTeleportation : MonoBehaviour
 //>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
         nextNodeIndex++;
 
-        if (nextNodeIndex >= nodes.Count)
+        if (nextNodeIndex > nodes.Count)
         {
             nextNodeIndex = 0;
         }
