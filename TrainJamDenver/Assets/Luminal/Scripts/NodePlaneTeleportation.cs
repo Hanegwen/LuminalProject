@@ -30,12 +30,14 @@ public class NodePlaneTeleportation : MonoBehaviour
 
     OVRManager player;
     ChangeColors colorChanger;
+    FadeInOutManager fader;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<OVRManager>();
         colorChanger = FindObjectOfType<ChangeColors>();
+        fader = FindObjectOfType<FadeInOutManager>();
 
         foreach (GameObject node in Node0)
         {
