@@ -53,8 +53,7 @@ public class FadeUIElement : MonoBehaviour
         {
             cg.alpha += stepPerFrame;
 
-            if (cg.alpha >= 1 - stepPerFrame
-                && cg.alpha != 1)
+            if (cg.alpha >= 1 - stepPerFrame && cg.alpha != 1)
             {
                 cg.alpha = 1;
                 break;
