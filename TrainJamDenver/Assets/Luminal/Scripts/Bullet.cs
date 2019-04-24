@@ -22,7 +22,8 @@ public class Bullet : MonoBehaviour
         {
             if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || Input.GetKeyDown(KeyCode.W))
             {
-                animator.SetBool("IsExtending", true);
+                //animator.SetBool("IsExtending", true);
+                transform.GetChild(0).GetChild(0).GetComponent<Animator>().Play("TempHammerAnim");
                 print(animator.GetBool("IsExtending"));
                 canPopUp = false;
                 StartCoroutine(Recharge());
