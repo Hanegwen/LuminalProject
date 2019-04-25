@@ -17,11 +17,12 @@ public class FadeUIElement : MonoBehaviour
     public event FadeEventHandler FadeInComplete;
 
     private CanvasGroup cg;
+    Bullet bullet;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        bullet = FindObjectOfType<Bullet>();
     }
 
     private void Awake()
@@ -43,6 +44,8 @@ public class FadeUIElement : MonoBehaviour
 
     public void FadeIn(float stepPerFrame)
     {
+        bullet.GetComponent<BoxCollider>().enabled = false;
+        print("Fade");
         StartCoroutine(FadeInCoroutine(stepPerFrame));
     }
 
@@ -58,13 +61,13 @@ public class FadeUIElement : MonoBehaviour
                 cg.alpha = 1;
                 break;
             }
-
+            FadeOut(stepPerFrame);
             yield return null;
         }
 
         cg.interactable = true;
 
-        RaiseFadeInComplete();
+        //RaiseFadeInComplete();
 
         yield return null;
     }
@@ -79,6 +82,8 @@ public class FadeUIElement : MonoBehaviour
 
     public void FadeOut(float stepPerFrame)
     {
+        bullet.GetComponent<BoxCollider>().enabled = true;
+
         StartCoroutine(FadeOutCoroutine(stepPerFrame));
     }
 

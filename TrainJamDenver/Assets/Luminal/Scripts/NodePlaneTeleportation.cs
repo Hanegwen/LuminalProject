@@ -30,14 +30,14 @@ public class NodePlaneTeleportation : MonoBehaviour
 
     OVRManager player;
     ChangeColors colorChanger;
-    FadeInOutManager fader;
+    FadeUIElement fader;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<OVRManager>();
         colorChanger = FindObjectOfType<ChangeColors>();
-        fader = FindObjectOfType<FadeInOutManager>();
+        fader = FindObjectOfType<FadeUIElement>();
 
         foreach (GameObject node in Node0)
         {
@@ -64,24 +64,17 @@ public class NodePlaneTeleportation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-        if (nextNodeIndex - 1 == 0)
-//=======
-//=======
-//>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
+
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             TeleportToNextNode();
         }
 
         if(nextNodeIndex - 1 == 0)
-//>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
         {
-            //print("**********");
             if (Node0.Count == 0)
             {
-                //print("&&&&&&&&&&&&&&&&&&&");
                 TeleportToNextNode();
             }
         }
@@ -93,27 +86,28 @@ public class NodePlaneTeleportation : MonoBehaviour
                 TeleportToNextNode();
             }
         }
+
+        if(nextNodeIndex - 1 == 2)
+        {
+            if(Node2.Count == 0)
+            {
+                TeleportToNextNode();
+            }
+        }
     }
 
     public void TeleportToNextNode()
     {
-//<<<<<<< HEAD
-        //player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, this.transform.position.y, nodes[nextNodeIndex].transform.position.z);
-//=======
+        fader.FadeIn(.05f);
+
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
         player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
-//<<<<<<< HEAD
-//>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
-//=======
-//>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
         nextNodeIndex++;
 
         if (nextNodeIndex > nodes.Count)
         {
             nextNodeIndex = 0;
         }
-//<<<<<<< HEAD
-//=======
         
         switch(nextNodeIndex)
         {
@@ -132,8 +126,5 @@ public class NodePlaneTeleportation : MonoBehaviour
             default:
                 break;
         }
-//>>>>>>> a12a40364e6085e4be944e7f5c3618ca939e9510
-
-        //Debug.Log("Teleported to next node");
     }
 }

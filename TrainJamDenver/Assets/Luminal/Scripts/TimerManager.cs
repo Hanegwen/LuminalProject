@@ -55,7 +55,7 @@ public class TimerManager : MonoBehaviour
             //Go to next group of HittableObjects to test for
             hom.currentGroup++;
 
-            RaiseTimerRunDown();
+            //RaiseTimerRunDown();
 
             //Debug.Log("TimerRunDown");
         }

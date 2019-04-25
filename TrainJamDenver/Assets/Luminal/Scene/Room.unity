@@ -438,7 +438,7 @@ Canvas:
   m_GameObject: {fileID: 62918118}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 245870643}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1703,7 +1703,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253774222}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -18236,7 +18236,7 @@ PrefabInstance:
     - target: {fileID: 505702014902504926, guid: 31033935714abf9429a4a5fa228a88b6,
         type: 3}
       propertyPath: Node2.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 505702014902504926, guid: 31033935714abf9429a4a5fa228a88b6,
         type: 3}
@@ -18317,12 +18317,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Node2.Array.data[2]
       value: 
-      objectReference: {fileID: 269777482}
+      objectReference: {fileID: 441188918}
     - target: {fileID: 505702014902504926, guid: 31033935714abf9429a4a5fa228a88b6,
         type: 3}
       propertyPath: Node2.Array.data[3]
       value: 
-      objectReference: {fileID: 441188918}
+      objectReference: {fileID: 1123807375}
     - target: {fileID: 505702014902504926, guid: 31033935714abf9429a4a5fa228a88b6,
         type: 3}
       propertyPath: Node2.Array.data[4]
