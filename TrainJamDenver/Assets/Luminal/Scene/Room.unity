@@ -586,6 +586,7 @@ MonoBehaviour:
     type: 3}
   group: 0
   ListNum: 0
+  life: 1
 --- !u!54 &71498600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -845,6 +846,7 @@ MonoBehaviour:
     type: 3}
   group: 0
   ListNum: 0
+  life: 1
 --- !u!54 &95477614
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -977,6 +979,7 @@ MonoBehaviour:
     type: 3}
   group: 1
   ListNum: 0
+  life: 3
 --- !u!54 &122326346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1109,6 +1112,7 @@ MonoBehaviour:
     type: 3}
   group: 3
   ListNum: 0
+  life: 3
 --- !u!54 &144054258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1241,6 +1245,7 @@ MonoBehaviour:
     type: 3}
   group: 0
   ListNum: 0
+  life: 1
 --- !u!54 &158937927
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1700,6 +1705,7 @@ MonoBehaviour:
     type: 3}
   group: 2
   ListNum: 0
+  life: 3
 --- !u!54 &269777484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1955,6 +1961,7 @@ MonoBehaviour:
     type: 3}
   group: 4
   ListNum: 0
+  life: 3
 --- !u!54 &359132596
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2172,6 +2179,7 @@ MonoBehaviour:
     type: 3}
   group: 1
   ListNum: 0
+  life: 3
 --- !u!54 &426109673
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2304,6 +2312,7 @@ MonoBehaviour:
     type: 3}
   group: 2
   ListNum: 0
+  life: 3
 --- !u!54 &441188920
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2467,6 +2476,7 @@ MonoBehaviour:
     type: 3}
   group: 4
   ListNum: 0
+  life: 3
 --- !u!54 &528756117
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2647,6 +2657,7 @@ MonoBehaviour:
     type: 3}
   group: 4
   ListNum: 0
+  life: 3
 --- !u!54 &555176619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3476,6 +3487,7 @@ MonoBehaviour:
     type: 3}
   group: 0
   ListNum: 0
+  life: 3
 --- !u!54 &1032518458
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3608,6 +3620,7 @@ MonoBehaviour:
     type: 3}
   group: 3
   ListNum: 0
+  life: 3
 --- !u!54 &1110364157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3740,6 +3753,7 @@ MonoBehaviour:
     type: 3}
   group: 2
   ListNum: 0
+  life: 3
 --- !u!54 &1123807377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4168,6 +4182,7 @@ MonoBehaviour:
     type: 3}
   group: 2
   ListNum: 0
+  life: 3
 --- !u!54 &1249638573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4558,6 +4573,7 @@ MonoBehaviour:
     type: 3}
   group: 1
   ListNum: 0
+  life: 3
 --- !u!54 &1394493970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4735,6 +4751,7 @@ MonoBehaviour:
     type: 3}
   group: 3
   ListNum: 0
+  life: 3
 --- !u!54 &1415573848
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4867,6 +4884,7 @@ MonoBehaviour:
     type: 3}
   group: 1
   ListNum: 0
+  life: 3
 --- !u!54 &1440693867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4999,6 +5017,7 @@ MonoBehaviour:
     type: 3}
   group: 1
   ListNum: 0
+  life: 3
 --- !u!54 &1483569938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5298,6 +5317,7 @@ MonoBehaviour:
     type: 3}
   group: 2
   ListNum: 0
+  life: 3
 --- !u!54 &1685664488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5683,6 +5703,7 @@ MonoBehaviour:
     type: 3}
   group: 3
   ListNum: 0
+  life: 3
 --- !u!54 &1885926984
 Rigidbody:
   m_ObjectHideFlags: 0
