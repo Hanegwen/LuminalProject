@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField]
-    AudioSource backgroundMusic;
+    public AudioSource backgroundMusic;
 
     [SerializeField]
     AudioSource EffectSounds;
@@ -14,7 +14,7 @@ public class SoundManager : MonoBehaviour
     AudioClip SpringHammerSound;
 
     [SerializeField]
-    AudioClip StartSound;
+    public AudioClip StartSound;
 
     [SerializeField]
     AudioClip CompleteSound;
