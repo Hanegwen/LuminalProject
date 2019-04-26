@@ -20,13 +20,13 @@ public class FadeInOutManager : MonoBehaviour
     void Start()
     {
         tm = this.GetComponent<TimerManager>();
-        fUIe = UIElementToFade.GetComponent<FadeUIElement>();
+        //fUIe = UIElementToFade.GetComponent<FadeUIElement>();
         npt = Player.GetComponent<NodePlaneTeleportation>();
 
         tm.TimerRunDown += OnTimerRunDown;
 
-        fUIe.FadeInComplete += OnFadeInComplete;
-        fUIe.FadeOutComplete += OnFadeOutComplete;
+        //fUIe.FadeInComplete += OnFadeInComplete;
+        //fUIe.FadeOutComplete += OnFadeOutComplete;
     }
 
     private void OnFadeOutComplete(object source, EventArgs e)

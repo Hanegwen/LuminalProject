@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public bool NotInTutorial = true;
     bool canPopUp = true;
+    
 
     Animator animator;
     // Start is called before the first frame update
