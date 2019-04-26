@@ -2049,6 +2049,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialText
       objectReference: {fileID: 0}
+    - target: {fileID: 1595451675, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595451675, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 1595451678, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2060,6 +2068,14 @@ PrefabInstance:
     - target: {fileID: 1595451676, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595451676, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
+      propertyPath: m_fontSize
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595451676, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 1.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5666a15dab8ae1e41b41ff132d1893eb, type: 3}
