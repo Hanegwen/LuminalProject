@@ -12,6 +12,8 @@ public class Tutorial : MonoBehaviour
     Material TransparentHammer;
     [SerializeField]
     Material OpaqueHammer;
+    [SerializeField]
+    GameObject tutorialText;
 
     bool MyTutorial = true;
     // Start is called before the first frame update
@@ -45,6 +47,7 @@ public class Tutorial : MonoBehaviour
                 MyTutorial = false;
                 bullet.NotInTutorial = true;
                 bullet.enabled = true;
+                Destroy(tutorialText);
             }
         }
     }
