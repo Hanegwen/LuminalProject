@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
-    bool canPopUp = true;
     public bool NotInTutorial = true;
+    bool canPopUp = true;
+    
 
     Animator animator;
     // Start is called before the first frame update
@@ -39,8 +39,6 @@ public class Bullet : MonoBehaviour
 
             }
         }
-        
-
     }
 
     private void OnCollisionEnter(Collision collision)

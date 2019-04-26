@@ -7,6 +7,7 @@ public class Tutorial : MonoBehaviour
     Bullet bullet;
     HammerHead hammerHead;
     HammerMaterial hammerMaterial;
+    SoundManager soundManager;
 
     [SerializeField]
     Material TransparentHammer;
@@ -15,10 +16,15 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     GameObject tutorialText;
 
+    [SerializeField]
+    AudioClip TutorailMusic;
+
+
     bool MyTutorial = true;
     // Start is called before the first frame update
     void Awake()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         hammerMaterial = FindObjectOfType<HammerMaterial>();
         bullet = FindObjectOfType<Bullet>();
         hammerHead = FindObjectOfType<HammerHead>();
@@ -27,6 +33,10 @@ public class Tutorial : MonoBehaviour
         bullet.GetComponent<BoxCollider>().enabled = false;
         hammerHead.GetComponent<BoxCollider>().enabled = false;
         hammerMaterial.GetComponent<SkinnedMeshRenderer>().material = TransparentHammer;
+
+        soundManager.backgroundMusic.clip = TutorailMusic;
+        soundManager.backgroundMusic.loop = true;
+        soundManager.backgroundMusic.Play();
     }
 
     // Update is called once per frame
@@ -48,6 +58,10 @@ public class Tutorial : MonoBehaviour
                 bullet.NotInTutorial = true;
                 bullet.enabled = true;
                 Destroy(tutorialText);
+
+                soundManager.backgroundMusic.clip = soundManager.StartSound;
+                soundManager.backgroundMusic.loop = true;
+                soundManager.backgroundMusic.Play();
             }
         }
     }
