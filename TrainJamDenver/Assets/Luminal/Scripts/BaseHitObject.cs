@@ -23,6 +23,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
     float scoreAdder;
 
     public int life = 3;
+    public float RechargeTime = .8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +86,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         else
         {
             life--;
+            soundManager.PlayHitSound(this.transform);
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             scoreManager.UpdateScore(scoreAdder);
@@ -105,7 +107,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     IEnumerator RechargeObject()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(RechargeTime);
         this.gameObject.GetComponent<MeshRenderer>().enabled = true;
         this.gameObject.GetComponent<BoxCollider>().enabled = true;
     }
