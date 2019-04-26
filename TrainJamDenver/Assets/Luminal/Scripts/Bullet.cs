@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     bool canPopUp = true;
+    public bool NotInTutorial = true;
 
     Animator animator;
     // Start is called before the first frame update
@@ -18,23 +19,27 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canPopUp)
+        if (NotInTutorial)
         {
-            if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || Input.GetKeyDown(KeyCode.W))
+            if (canPopUp)
             {
-                //animator.SetBool("IsExtending", true);
-                transform.GetChild(0).GetChild(0).GetComponent<Animator>().Play("TempHammerAnim");
-                print(animator.GetBool("IsExtending"));
-                canPopUp = false;
-                StartCoroutine(Recharge());
-                //Instantiate(prefab, transform.position, transform.rotation);
+                if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || Input.GetKeyDown(KeyCode.W))
+                {
+                    //animator.SetBool("IsExtending", true);
+                    transform.GetChild(0).GetChild(0).GetComponent<Animator>().Play("TempHammerAnim");
+                    print(animator.GetBool("IsExtending"));
+                    canPopUp = false;
+                    StartCoroutine(Recharge());
+                    //Instantiate(prefab, transform.position, transform.rotation);
+                }
+            }
+            else
+            {
+                animator.SetBool("IsExtending", false);
+
             }
         }
-        else
-        {
-            animator.SetBool("IsExtending", false);
-
-        }
+        
 
     }
 

@@ -18,6 +18,11 @@ GameObject:
   - component: {fileID: 656492813}
   - component: {fileID: 656492814}
   - component: {fileID: 656492815}
+  - component: {fileID: 2828499469982828646}
+  - component: {fileID: 418627340147289333}
+  - component: {fileID: 3392898216816031055}
+  - component: {fileID: 6037776862643157465}
+  - component: {fileID: 3064831560968563266}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -198,9 +203,88 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   FinalScoreText: {fileID: 0}
-  MoveText: 2
-  jumpPower: 1
-  numJumps: 2
-  duration: 6
-  DelayForReversal: 2
+  ScoreTextTransform: []
+--- !u!114 &2828499469982828646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505702014902504922}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc2c4d28c88e3d459e7ac3fa03d7eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerThreathold: 0
+  hittableObjects: []
+  currentGroup: 0
+--- !u!114 &418627340147289333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505702014902504922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e80389050578b49b855da03ee2a824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 505702014902504922}
+  UIElementToFade: {fileID: 0}
+--- !u!114 &3392898216816031055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505702014902504922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc404773728cfb94d9f7975e5a56733f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainTimer: 45
+  SecondaryTimer: 20
+  MainTimerStartTime: 0
+  SecondaryTimerStartTime: 0
+  RunMainTimer: 1
+  RunSecondaryTimer: 0
+--- !u!114 &6037776862643157465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505702014902504922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04dfd46194e2440b010b2ffdc883cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 0}
+  EffectSounds: {fileID: 0}
+  SpringHammerSound: {fileID: 8300000, guid: 6dfd27f22f96bad438bba851bca02cca, type: 3}
+  StartSound: {fileID: 8300000, guid: 638b18df837861044ba886df32e63e0c, type: 3}
+  CompleteSound: {fileID: 8300000, guid: d496d13f372fd5b4a97dc6e391e21180, type: 3}
+  HitSound: {fileID: 8300000, guid: c22cb4411f7483146a61705a9e1a6d34, type: 3}
+--- !u!114 &3064831560968563266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505702014902504922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399e041292d1e58418d0de011aeb2f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WallText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  FinalScoreText: {fileID: 0}
   ScoreTextTransform: []
