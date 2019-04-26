@@ -14,10 +14,12 @@ public class DebugManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Input.
-        //if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0)
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
-        //}
+
+    }
+
+    //Restarts the scene; starts game over
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
