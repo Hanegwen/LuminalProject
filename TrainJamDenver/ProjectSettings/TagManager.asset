@@ -15,8 +15,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - HammerCollision
+  - ArtCollision
   - 
   - 
   - 
