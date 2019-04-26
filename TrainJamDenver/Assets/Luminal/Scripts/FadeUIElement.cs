@@ -44,7 +44,7 @@ public class FadeUIElement : MonoBehaviour
 
     public void FadeIn(float stepPerFrame)
     {
-        bullet.GetComponent<BoxCollider>().enabled = false;
+        //bullet.GetComponent<BoxCollider>().enabled = false;
         print("Fade");
         StartCoroutine(FadeInCoroutine(stepPerFrame));
     }
@@ -82,7 +82,7 @@ public class FadeUIElement : MonoBehaviour
 
     public void FadeOut(float stepPerFrame)
     {
-        bullet.GetComponent<BoxCollider>().enabled = true;
+        //bullet.GetComponent<BoxCollider>().enabled = true;
 
         StartCoroutine(FadeOutCoroutine(stepPerFrame));
     }
