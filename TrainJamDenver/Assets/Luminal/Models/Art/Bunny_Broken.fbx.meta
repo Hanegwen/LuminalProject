@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 67911eb22cf875d4f873d858ddd96c4b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BA_Broken
+    100002: BA_Broken1
+    100004: //RootNode
+    100006: BunnyArtifact_Unbroken
+    100008: BunnyArtifact_Unbroken_copy1
+    100010: BunnyArtifact_Unbroken_copy10
+    100012: BunnyArtifact_Unbroken_copy11
+    100014: BunnyArtifact_Unbroken_copy12
+    100016: BunnyArtifact_Unbroken_copy13
+    100018: BunnyArtifact_Unbroken_copy14
+    100020: BunnyArtifact_Unbroken_copy15
+    100022: BunnyArtifact_Unbroken_copy16
+    100024: BunnyArtifact_Unbroken_copy2
+    100026: BunnyArtifact_Unbroken_copy3
+    100028: BunnyArtifact_Unbroken_copy5
+    100030: BunnyArtifact_Unbroken_copy7
+    100032: BunnyArtifact_Unbroken_copy8
+    100034: BunnyArtifact_Unbroken_copy9
+    400000: BA_Broken
+    400002: BA_Broken1
+    400004: //RootNode
+    400006: BunnyArtifact_Unbroken
+    400008: BunnyArtifact_Unbroken_copy1
+    400010: BunnyArtifact_Unbroken_copy10
+    400012: BunnyArtifact_Unbroken_copy11
+    400014: BunnyArtifact_Unbroken_copy12
+    400016: BunnyArtifact_Unbroken_copy13
+    400018: BunnyArtifact_Unbroken_copy14
+    400020: BunnyArtifact_Unbroken_copy15
+    400022: BunnyArtifact_Unbroken_copy16
+    400024: BunnyArtifact_Unbroken_copy2
+    400026: BunnyArtifact_Unbroken_copy3
+    400028: BunnyArtifact_Unbroken_copy5
+    400030: BunnyArtifact_Unbroken_copy7
+    400032: BunnyArtifact_Unbroken_copy8
+    400034: BunnyArtifact_Unbroken_copy9
+    2100000: BA_Broken_T
+    2300000: BA_Broken
+    2300002: BA_Broken1
+    2300004: BunnyArtifact_Unbroken
+    2300006: BunnyArtifact_Unbroken_copy1
+    2300008: BunnyArtifact_Unbroken_copy10
+    2300010: BunnyArtifact_Unbroken_copy11
+    2300012: BunnyArtifact_Unbroken_copy12
+    2300014: BunnyArtifact_Unbroken_copy13
+    2300016: BunnyArtifact_Unbroken_copy14
+    2300018: BunnyArtifact_Unbroken_copy15
+    2300020: BunnyArtifact_Unbroken_copy16
+    2300022: BunnyArtifact_Unbroken_copy2
+    2300024: BunnyArtifact_Unbroken_copy3
+    2300026: BunnyArtifact_Unbroken_copy5
+    2300028: BunnyArtifact_Unbroken_copy7
+    2300030: BunnyArtifact_Unbroken_copy8
+    2300032: BunnyArtifact_Unbroken_copy9
+    3300000: BA_Broken
+    3300002: BA_Broken1
+    3300004: BunnyArtifact_Unbroken
+    3300006: BunnyArtifact_Unbroken_copy1
+    3300008: BunnyArtifact_Unbroken_copy10
+    3300010: BunnyArtifact_Unbroken_copy11
+    3300012: BunnyArtifact_Unbroken_copy12
+    3300014: BunnyArtifact_Unbroken_copy13
+    3300016: BunnyArtifact_Unbroken_copy14
+    3300018: BunnyArtifact_Unbroken_copy15
+    3300020: BunnyArtifact_Unbroken_copy16
+    3300022: BunnyArtifact_Unbroken_copy2
+    3300024: BunnyArtifact_Unbroken_copy3
+    3300026: BunnyArtifact_Unbroken_copy5
+    3300028: BunnyArtifact_Unbroken_copy7
+    3300030: BunnyArtifact_Unbroken_copy8
+    3300032: BunnyArtifact_Unbroken_copy9
+    4300000: BunnyArtifact_Unbroken
+    4300002: BunnyArtifact_Unbroken_copy1
+    4300004: BunnyArtifact_Unbroken_copy2
+    4300006: BunnyArtifact_Unbroken_copy3
+    4300008: BA_Broken1
+    4300010: BunnyArtifact_Unbroken_copy5
+    4300012: BA_Broken
+    4300014: BunnyArtifact_Unbroken_copy7
+    4300016: BunnyArtifact_Unbroken_copy8
+    4300018: BunnyArtifact_Unbroken_copy9
+    4300020: BunnyArtifact_Unbroken_copy10
+    4300022: BunnyArtifact_Unbroken_copy11
+    4300024: BunnyArtifact_Unbroken_copy12
+    4300026: BunnyArtifact_Unbroken_copy13
+    4300028: BunnyArtifact_Unbroken_copy14
+    4300030: BunnyArtifact_Unbroken_copy15
+    4300032: BunnyArtifact_Unbroken_copy16
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
