@@ -15,6 +15,8 @@ public class Tutorial : MonoBehaviour
     Material OpaqueHammer;
     [SerializeField]
     GameObject tutorialText;
+    [SerializeField]
+    TrailRenderer hammerTrail;
 
     [SerializeField]
     AudioClip TutorailMusic;
@@ -58,6 +60,7 @@ public class Tutorial : MonoBehaviour
                 bullet.NotInTutorial = true;
                 bullet.enabled = true;
                 Destroy(tutorialText);
+                hammerTrail.emitting = true;
 
                 soundManager.backgroundMusic.clip = soundManager.StartSound;
                 soundManager.backgroundMusic.loop = true;
