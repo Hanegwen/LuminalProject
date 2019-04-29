@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasGroup))]
+//[RequireComponent(typeof(CanvasGroup))]
 public class FadeUIElement : MonoBehaviour
 {
     //[Tooltip("UI Element must have a Canvas Group")]
@@ -16,20 +16,36 @@ public class FadeUIElement : MonoBehaviour
     public event FadeEventHandler FadeOutComplete;
     public event FadeEventHandler FadeInComplete;
 
-    private CanvasGroup cg;
+    [SerializeField]
+    Material black;
+
+    //private CanvasGroup cg;
+
+    Renderer rend;
+
     Bullet bullet;
+
+    int x = 0;
+    int y = 0;
+    int z = 0;
+
+    float opac = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        rend = GetComponent<Renderer>();
         bullet = FindObjectOfType<Bullet>();
+
+        rend.material = black;
+        rend.material.SetColor("Black", new Vector4(x,y,z,opac));
     }
 
     private void Awake()
     {
-        cg = this.GetComponent<CanvasGroup>();
+        //cg = this.GetComponent<CanvasGroup>();
 
-        if (cg == null)
+        if (rend == null)
         {
             Debug.Log("Warning: No CanvasGroup Found");
         }
@@ -39,7 +55,7 @@ public class FadeUIElement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        rend.material.SetColor("_Color", new Vector4(x, y, z, opac));
     }
 
     public void FadeIn(float stepPerFrame)
@@ -52,20 +68,20 @@ public class FadeUIElement : MonoBehaviour
     //Fades a UIElement in
     IEnumerator FadeInCoroutine(float stepPerFrame)
     {
-        while (cg.alpha < 1)
+        while (opac < 255)
         {
-            cg.alpha += stepPerFrame;
+            opac += stepPerFrame;
 
-            if (cg.alpha >= 1 - stepPerFrame && cg.alpha != 1)
+            if (opac >= 255 - stepPerFrame && opac != 1)
             {
-                cg.alpha = 1;
+                opac = 1;
                 break;
             }
             FadeOut(stepPerFrame);
             yield return null;
         }
 
-        cg.interactable = true;
+        //rend.interactable = true;
 
         //RaiseFadeInComplete();
 
@@ -90,21 +106,21 @@ public class FadeUIElement : MonoBehaviour
     //Fades a UIElement out
     IEnumerator FadeOutCoroutine(float stepPerFrame)
     {
-        while (cg.alpha > 0)
+        while (opac > 0)
         {
-            cg.alpha -= stepPerFrame;
+            opac -= stepPerFrame;
 
-            if (cg.alpha <= stepPerFrame
-                && cg.alpha != 0)
+            if (opac <= stepPerFrame
+                && opac != 0)
             {
-                cg.alpha = 0;
+                opac = 0;
                 break;
             }
 
             yield return null;
         }
 
-        cg.interactable = false;
+        //rend.interactable = false;
 
         RaiseFadeOutComplete();
 
