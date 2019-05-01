@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1;
                 isPaused = false;
             }
+        }
+
+        if (isPaused && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || isPaused && Input.GetKeyDown(KeyCode.B))
+        {
+            SceneManager.LoadScene("Room");
         }
     }
 }
