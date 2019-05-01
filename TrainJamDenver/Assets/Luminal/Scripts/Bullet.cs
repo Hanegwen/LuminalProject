@@ -5,11 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public bool NotInTutorial = true;
-    public TrailRenderer hammerTrail;
 
     bool canPopUp = true;
-    Vector3[] trailPositions = new Vector3[100];
-    int numTrails = 0;
     Animator animator;
 
     // Start is called before the first frame update
@@ -21,11 +18,10 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //hammerTrail.GetPositions(trailPositions);
 
         if (NotInTutorial)
         {
-            if(/*OVRInput.GetUp(OVRInput.Button.Two) ||*/ OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) <= 0 || Input.GetKeyDown(KeyCode.A))
+            if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) <= 0 || Input.GetKeyDown(KeyCode.A))
             {
                 canPopUp = true;
             }
@@ -46,35 +42,6 @@ public class Bullet : MonoBehaviour
             {
                 animator.SetBool("IsExtending", false);
 
-            }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("No Bueno");
-        if(collision.gameObject.GetComponent<IHitable>() != null)
-        {
-            hammerTrail.GetPositions(trailPositions);
-
-            if (collision.gameObject.layer == 10 && numTrails > 5)
-            {
-                collision.gameObject.GetComponent<IHitable>().Hit();
-                print("Hit");
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        print("Wow");
-        if(other.gameObject.GetComponent<IHitable>() != null)
-        {
-            hammerTrail.GetPositions(trailPositions);
-
-            if (other.gameObject.layer == 10 && numTrails > 5)
-            {
-                other.gameObject.GetComponent<IHitable>().Hit();
             }
         }
     }

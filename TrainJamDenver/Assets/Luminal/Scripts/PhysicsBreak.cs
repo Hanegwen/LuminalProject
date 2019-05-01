@@ -6,14 +6,18 @@ public class PhysicsBreak : MonoBehaviour
 {
     public GameObject brokenPieces;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "Floor")
+        {
+            Explode(1);
+            Destroy(gameObject);
+        }
     }
 
-    public void Explode()
+    public void Explode(float yAdd)
     {
-        GameObject brokenObject = Instantiate(brokenPieces, transform.position, transform.rotation);
+        GameObject brokenObject = Instantiate(brokenPieces, new Vector3(transform.position.x, transform.position.y + yAdd, transform.position.z), transform.rotation);
 
         for (int i = 0; i < brokenObject.transform.childCount; i++)
         {

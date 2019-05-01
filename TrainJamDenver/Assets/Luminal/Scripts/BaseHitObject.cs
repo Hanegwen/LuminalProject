@@ -50,7 +50,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
         if (GetComponent<PhysicsBreak>() != null)
         {
-            GetComponent<PhysicsBreak>().Explode();
+            GetComponent<PhysicsBreak>().Explode(0);
         }
     }
 

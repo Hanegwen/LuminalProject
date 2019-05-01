@@ -8,45 +8,31 @@ public class HammerHead : MonoBehaviour
 
     Vector3[] trailPositions = new Vector3[100];
     int numTrails = 0;
-
-    private void Update()
-    {
-        //hammerTrail.GetPositions(trailPositions);
-        //print(hammerTrail.GetPositions(trailPositions));
-    }
+    float minNumberOfPoints = 3;
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("No Bueno");
         if (collision.gameObject.GetComponent<IHitable>() != null)
         {
             numTrails = hammerTrail.GetPositions(trailPositions);
 
-            if (collision.gameObject.layer == 10 && numTrails > 5)
+            if (collision.gameObject.layer == 10 && numTrails > minNumberOfPoints)
             {
                 collision.gameObject.GetComponent<IHitable>().Hit();
-                print("Hit");
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Wow");
         if (other.gameObject.GetComponent<IHitable>() != null)
         {
             hammerTrail.GetPositions(trailPositions);
 
-            if (other.gameObject.layer == 10 && numTrails > 5)
+            if (other.gameObject.layer == 10 && numTrails > minNumberOfPoints)
             {
                 other.gameObject.GetComponent<IHitable>().Hit();
             }
         }
     }
-
-    /*private void Update()
-    {
-        transform.GetChild(1).GetComponent<TrailRenderer>().GetPositions(trailPositions);
-        print(Vector3.Distance(trailPositions[0], trailPositions[5]));
-    }*/
 }
