@@ -19,7 +19,7 @@ public class Rope : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<Bullet>() != null)
+        if(collision.gameObject.GetComponent<HammerHead>() != null)
         {
             rigidbody.useGravity = true;
         }
@@ -27,7 +27,7 @@ public class Rope : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Bullet>() != null)
+        if(other.gameObject.GetComponent<HammerHead>() != null)
         {
             rigidbody.useGravity = true;
         }

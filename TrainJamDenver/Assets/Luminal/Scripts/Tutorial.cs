@@ -21,6 +21,9 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     AudioClip TutorailMusic;
 
+    [SerializeField]
+    ChainDrop firstLetter;
+
 
     bool MyTutorial = true;
     // Start is called before the first frame update
@@ -61,6 +64,7 @@ public class Tutorial : MonoBehaviour
                 bullet.enabled = true;
                 Destroy(tutorialText);
                 hammerTrail.emitting = true;
+                firstLetter.StartChain();
 
                 soundManager.backgroundMusic.clip = soundManager.StartSound;
                 soundManager.backgroundMusic.loop = true;

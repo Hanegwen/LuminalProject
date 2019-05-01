@@ -21,6 +21,11 @@ public class Bullet : MonoBehaviour
     {
         if (NotInTutorial)
         {
+            if(/*OVRInput.GetUp(OVRInput.Button.Two) ||*/ OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) <= 0 || Input.GetKeyDown(KeyCode.A))
+            {
+                canPopUp = true;
+            }
+
             if (canPopUp)
             {
                 if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || Input.GetKeyDown(KeyCode.W))
@@ -29,7 +34,7 @@ public class Bullet : MonoBehaviour
                     transform.GetChild(0).GetChild(0).GetComponent<Animator>().Play("TempHammerAnim");
                     print(animator.GetBool("IsExtending"));
                     canPopUp = false;
-                    StartCoroutine(Recharge());
+                    //StartCoroutine(Recharge());
                     //Instantiate(prefab, transform.position, transform.rotation);
                 }
             }
