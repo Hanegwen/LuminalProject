@@ -47,7 +47,11 @@ public class BaseHitObject : MonoBehaviour, IHitable
     public void Hit()
     {
         LifeCheck();
-        
+
+        if (GetComponent<PhysicsBreak>() != null)
+        {
+            GetComponent<PhysicsBreak>().Explode();
+        }
     }
 
     void LifeCheck()

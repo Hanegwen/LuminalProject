@@ -5,20 +5,24 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public bool NotInTutorial = true;
-    bool canPopUp = true;
-    
+    public TrailRenderer hammerTrail;
 
+    bool canPopUp = true;
+    Vector3[] trailPositions = new Vector3[100];
+    int numTrails = 0;
     Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //hammerTrail.GetPositions(trailPositions);
+
         if (NotInTutorial)
         {
             if (canPopUp)
@@ -46,8 +50,13 @@ public class Bullet : MonoBehaviour
         print("No Bueno");
         if(collision.gameObject.GetComponent<IHitable>() != null)
         {
-            collision.gameObject.GetComponent<IHitable>().Hit();
-            print("Hit");
+            hammerTrail.GetPositions(trailPositions);
+
+            if (collision.gameObject.layer == 10 && numTrails > 5)
+            {
+                collision.gameObject.GetComponent<IHitable>().Hit();
+                print("Hit");
+            }
         }
     }
 
@@ -56,7 +65,12 @@ public class Bullet : MonoBehaviour
         print("Wow");
         if(other.gameObject.GetComponent<IHitable>() != null)
         {
-            other.gameObject.GetComponent<IHitable>().Hit();
+            hammerTrail.GetPositions(trailPositions);
+
+            if (other.gameObject.layer == 10 && numTrails > 5)
+            {
+                other.gameObject.GetComponent<IHitable>().Hit();
+            }
         }
     }
 

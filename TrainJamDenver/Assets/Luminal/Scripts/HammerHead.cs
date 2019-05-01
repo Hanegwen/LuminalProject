@@ -4,25 +4,43 @@ using UnityEngine;
 
 public class HammerHead : MonoBehaviour
 {
+    public TrailRenderer hammerTrail;
+
     Vector3[] trailPositions = new Vector3[100];
+    int numTrails = 0;
+
+    private void Update()
+    {
+        //hammerTrail.GetPositions(trailPositions);
+        //print(hammerTrail.GetPositions(trailPositions));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("No Bueno");
+        if (collision.gameObject.GetComponent<IHitable>() != null)
+        {
+            numTrails = hammerTrail.GetPositions(trailPositions);
+
+            if (collision.gameObject.layer == 10 && numTrails > 5)
+            {
+                collision.gameObject.GetComponent<IHitable>().Hit();
+                print("Hit");
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 10)
+        print("Wow");
+        if (other.gameObject.GetComponent<IHitable>() != null)
         {
-            transform.GetChild(1).GetComponent<TrailRenderer>().GetPositions(trailPositions);
+            hammerTrail.GetPositions(trailPositions);
 
-            /*for (int i = 0; i < trailPositions.Length; i++)
+            if (other.gameObject.layer == 10 && numTrails > 5)
             {
-                print(trailPositions[i]);
-            }*/
-            
-            if (Vector3.Distance(trailPositions[0], trailPositions[2]) > 0.2f)
-            {
-                print("greater");
+                other.gameObject.GetComponent<IHitable>().Hit();
             }
-            else
-                print("less");
         }
     }
 
