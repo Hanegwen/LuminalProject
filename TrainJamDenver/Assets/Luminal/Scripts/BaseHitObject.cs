@@ -19,6 +19,8 @@ public class BaseHitObject : MonoBehaviour, IHitable
     SoundManager soundManager;
     ScoreManager scoreManager;
 
+    Vector3 resetPosition;
+    Quaternion resetRotation;
 
     float scoreAdder;
 
@@ -28,6 +30,8 @@ public class BaseHitObject : MonoBehaviour, IHitable
     void Start()
     {
         scoreAdder = 10;
+        resetPosition = transform.position;
+        resetRotation = transform.rotation;
         //rigidbody.GetComponent<Rigidbody>();
 
         //this.tag = "HittableObject";
@@ -105,7 +109,6 @@ public class BaseHitObject : MonoBehaviour, IHitable
         if (HitEvent != null)
         {
             HitEvent(this, null);
-            //Debug.Log("HitEvent Raised");
         }
     }
 
@@ -114,5 +117,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         yield return new WaitForSeconds(RechargeTime);
         this.gameObject.GetComponent<MeshRenderer>().enabled = true;
         this.gameObject.GetComponent<BoxCollider>().enabled = true;
+        transform.position = resetPosition;
+        transform.rotation = resetRotation;
     }
 }

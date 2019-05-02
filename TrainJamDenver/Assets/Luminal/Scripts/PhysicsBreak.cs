@@ -10,8 +10,9 @@ public class PhysicsBreak : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            Explode(1);
-            Destroy(gameObject);
+            //Explode(1);
+            //Destroy(gameObject);
+            GetComponent<BaseHitObject>().Hit();
         }
     }
 
