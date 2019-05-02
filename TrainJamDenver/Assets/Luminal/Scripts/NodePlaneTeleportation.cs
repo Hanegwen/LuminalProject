@@ -24,7 +24,7 @@ public class NodePlaneTeleportation : MonoBehaviour
 
     [SerializeField]
     public List<GameObject> Node2;
-
+    
     [SerializeField]
     public List<GameObject> Node3;
 

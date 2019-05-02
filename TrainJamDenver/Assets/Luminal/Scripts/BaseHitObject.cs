@@ -11,7 +11,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     public delegate void HitEventHandler(object sender, EventArgs e);
     public event HitEventHandler HitEvent;
-
+    
     public float ListNum;
 
     NodePlaneTeleportation nodePlaneTeleportation;

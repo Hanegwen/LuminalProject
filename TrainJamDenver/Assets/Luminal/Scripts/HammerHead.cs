@@ -27,7 +27,7 @@ public class HammerHead : MonoBehaviour
     {
         if (other.gameObject.GetComponent<IHitable>() != null)
         {
-            hammerTrail.GetPositions(trailPositions);
+            numTrails = hammerTrail.GetPositions(trailPositions);
 
             if (other.gameObject.layer == 10 && numTrails > minNumberOfPoints)
             {

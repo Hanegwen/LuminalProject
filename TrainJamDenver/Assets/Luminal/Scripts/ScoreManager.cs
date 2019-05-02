@@ -25,18 +25,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            UpdateScore(10f);
-        }
-
-        
-    }
-
     public void UpdateScore(float ScoreToAdd)
     {
         currentscore += ScoreToAdd;
