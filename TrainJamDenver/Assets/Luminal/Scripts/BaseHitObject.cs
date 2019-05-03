@@ -27,6 +27,8 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     public int life = 3;
     public float RechargeTime = .8f;
+
+    bool canBeHit = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,11 +53,14 @@ public class BaseHitObject : MonoBehaviour, IHitable
 
     public void Hit()
     {
-        LifeCheck();
-
-        if (GetComponent<PhysicsBreak>() != null)
+        if (canBeHit)
         {
-            GetComponent<PhysicsBreak>().Explode(0);
+            LifeCheck();
+
+            if (GetComponent<PhysicsBreak>() != null)
+            {
+                GetComponent<PhysicsBreak>().Explode(0);
+            }
         }
     }
 
@@ -116,10 +121,23 @@ public class BaseHitObject : MonoBehaviour, IHitable
     IEnumerator RechargeObject()
     {
         yield return new WaitForSeconds(RechargeTime);
+        canBeHit = false;
+        
         this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+
         this.gameObject.GetComponent<BoxCollider>().enabled = true;
+
+        StartCoroutine(Invincible());
         transform.position = resetPosition;
         transform.rotation = resetRotation;
         Instantiate(respawnParticlePrefab, transform.position, transform.rotation, null);
+    }
+
+    IEnumerator Invincible()
+    {
+        yield return new WaitForSeconds(.25f);
+
+        canBeHit = true;
+        
     }
 }
