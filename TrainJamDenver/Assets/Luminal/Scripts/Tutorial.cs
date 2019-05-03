@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
     Bullet bullet;
-    HammerHead hammerHead;
+    HammerHead[] hammerHead;
     HammerMaterial hammerMaterial;
     SoundManager soundManager;
 
@@ -32,11 +32,14 @@ public class Tutorial : MonoBehaviour
         soundManager = FindObjectOfType<SoundManager>();
         hammerMaterial = FindObjectOfType<HammerMaterial>();
         bullet = FindObjectOfType<Bullet>();
-        hammerHead = FindObjectOfType<HammerHead>();
+        hammerHead = FindObjectsOfType<HammerHead>();
         bullet.enabled = false;
         bullet.NotInTutorial = false;
         bullet.GetComponent<BoxCollider>().enabled = false;
-        hammerHead.GetComponent<BoxCollider>().enabled = false;
+        foreach(HammerHead head in hammerHead)
+        {
+            head.GetComponent<BoxCollider>().enabled = false;
+        }
         hammerMaterial.GetComponent<SkinnedMeshRenderer>().material = TransparentHammer;
 
         soundManager.backgroundMusic.clip = TutorailMusic;
@@ -57,7 +60,10 @@ public class Tutorial : MonoBehaviour
             if (MyTutorial)
             {
                 bullet.GetComponent<BoxCollider>().enabled = true;
-                hammerHead.GetComponent<BoxCollider>().enabled = true;
+                foreach (HammerHead head in hammerHead)
+                {
+                    head.GetComponent<BoxCollider>().enabled = true;
+                }
                 hammerMaterial.GetComponent<SkinnedMeshRenderer>().material = OpaqueHammer;
                 MyTutorial = false;
                 bullet.NotInTutorial = true;
@@ -67,6 +73,11 @@ public class Tutorial : MonoBehaviour
                 firstLetter.StartChain();
 
                 soundManager.backgroundMusic.clip = soundManager.StartSound;
+
+                soundManager.ExtraSound.loop = true;
+                soundManager.ExtraSound.volume = 0;
+                soundManager.ExtraSound.Play();
+
                 soundManager.backgroundMusic.loop = true;
                 soundManager.backgroundMusic.Play();
             }
