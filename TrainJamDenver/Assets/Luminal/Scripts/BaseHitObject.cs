@@ -6,6 +6,7 @@ using UnityEngine;
 public class BaseHitObject : MonoBehaviour, IHitable
 {
     public GameObject hitPointsPrefab;
+    public GameObject respawnParticlePrefab;
 
     public int group;       //Group this object is tested with in HittableObjectManager
 
@@ -119,5 +120,6 @@ public class BaseHitObject : MonoBehaviour, IHitable
         this.gameObject.GetComponent<BoxCollider>().enabled = true;
         transform.position = resetPosition;
         transform.rotation = resetRotation;
+        Instantiate(respawnParticlePrefab, transform.position, transform.rotation, null);
     }
 }

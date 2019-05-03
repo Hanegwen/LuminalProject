@@ -7,18 +7,9 @@ public class Bullet : MonoBehaviour
     public bool NotInTutorial = true;
 
     bool canPopUp = true;
-    Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
         if (NotInTutorial)
         {
             if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) <= 0 || Input.GetKeyDown(KeyCode.A))
@@ -30,18 +21,10 @@ public class Bullet : MonoBehaviour
             {
                 if (OVRInput.GetUp(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0 || Input.GetKeyDown(KeyCode.W))
                 {
-                    //animator.SetBool("IsExtending", true);
-                    transform.GetChild(0).GetChild(0).GetComponent<Animator>().Play("TempHammerAnim");
-                    print(animator.GetBool("IsExtending"));
+                    GetComponent<Animator>().Play("TempHammerAnim");
                     canPopUp = false;
-                    //StartCoroutine(Recharge());
-                    //Instantiate(prefab, transform.position, transform.rotation);
+                    GetComponent<HammerHead>().shooting = true;
                 }
-            }
-            else
-            {
-                animator.SetBool("IsExtending", false);
-
             }
         }
     }
@@ -50,5 +33,6 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         canPopUp = true;
+        GetComponent<HammerHead>().shooting = false;
     }
 }

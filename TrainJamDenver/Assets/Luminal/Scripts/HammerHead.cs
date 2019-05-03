@@ -6,9 +6,12 @@ public class HammerHead : MonoBehaviour
 {
     public TrailRenderer hammerTrail;
 
+    [HideInInspector]
+    public bool shooting = false;
+
     Vector3[] trailPositions = new Vector3[100];
     int numTrails = 0;
-    float minNumberOfPoints = 3;
+    float minNumberOfPoints = 5;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,7 +19,7 @@ public class HammerHead : MonoBehaviour
         {
             numTrails = hammerTrail.GetPositions(trailPositions);
 
-            if (collision.gameObject.layer == 10 && numTrails > minNumberOfPoints)
+            if (collision.gameObject.layer == 10 && numTrails > minNumberOfPoints || shooting)
             {
                 collision.gameObject.GetComponent<IHitable>().Hit();
             }
@@ -29,7 +32,7 @@ public class HammerHead : MonoBehaviour
         {
             numTrails = hammerTrail.GetPositions(trailPositions);
 
-            if (other.gameObject.layer == 10 && numTrails > minNumberOfPoints)
+            if (other.gameObject.layer == 10 && numTrails > minNumberOfPoints || shooting)
             {
                 other.gameObject.GetComponent<IHitable>().Hit();
             }
