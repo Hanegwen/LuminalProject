@@ -31,10 +31,13 @@ public class NodePlaneTeleportation : MonoBehaviour
     OVRManager player;
     ChangeColors colorChanger;
     FadeUIElement fader;
+    SoundManager soundManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         player = FindObjectOfType<OVRManager>();
         colorChanger = FindObjectOfType<ChangeColors>();
         fader = FindObjectOfType<FadeUIElement>();
@@ -118,6 +121,7 @@ public class NodePlaneTeleportation : MonoBehaviour
                 colorChanger.ColorTransition(50, 3, 0.7735f);
                 break;
             case 3:
+                soundManager.ExtraSound.volume = .286f;
                 colorChanger.ColorTransition(70, 3, 0.9245f);
                 break;
             case 4:

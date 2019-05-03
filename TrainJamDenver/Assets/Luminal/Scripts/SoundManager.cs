@@ -8,10 +8,25 @@ public class SoundManager : MonoBehaviour
     public AudioSource backgroundMusic;
 
     [SerializeField]
+    public AudioSource ExtraSound;
+
+    [SerializeField]
+    AudioClip extraSound;
+
+    [SerializeField]
     AudioSource EffectSounds;
 
     [SerializeField]
+    AudioSource HammerEmitter;
+
+    [SerializeField]
     AudioClip SpringHammerSound;
+
+    [SerializeField]
+    AudioClip smash1, smash2, smash3, smash4;
+
+    [SerializeField]
+    AudioClip launch0, launch1;
 
     [SerializeField]
     public AudioClip StartSound;
@@ -22,6 +37,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     AudioClip HitSound;
 
+    Random ran = new Random();
+    int currentRan;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +52,50 @@ public class SoundManager : MonoBehaviour
         
     }
 
+    public void PlayShootSound(Transform location)
+    {
+        HammerEmitter.transform.position = location.position;
+
+        currentRan = Random.Range(0, 1);
+
+        switch(currentRan)
+        {
+            case 1:
+                HammerEmitter.clip = launch0;
+                break;
+            default:
+                HammerEmitter.clip = launch1;
+                break;
+        }
+        HammerEmitter.Play();
+    }
+
     public void PlayHitSound(Transform location)
     {
         EffectSounds.transform.position = location.position;
-        EffectSounds.clip = HitSound;
+
+        currentRan = Random.Range(0, 4);
+
+        switch(currentRan)
+        {
+            case 1:
+                EffectSounds.clip = smash1;
+                break;
+            case 2:
+                EffectSounds.clip = smash2;
+                break;
+            case 3:
+                EffectSounds.clip = smash3;
+                break;
+            case 4:
+                EffectSounds.clip = smash4;
+                break;
+            default:
+                EffectSounds.clip = HitSound;
+                break;
+        }
+         
+        
         EffectSounds.Play();
     }
 
