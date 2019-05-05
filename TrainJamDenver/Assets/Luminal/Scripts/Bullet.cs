@@ -8,14 +8,11 @@ public class Bullet : MonoBehaviour
 
     bool canPopUp = true;
 
-    Animator animator;
     SoundManager soundManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
-        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,9 +30,7 @@ public class Bullet : MonoBehaviour
                 {
                     GetComponent<Animator>().Play("TempHammerAnim");
                     soundManager.PlayShootSound(this.transform);
-                    //animator.SetBool("IsExtending", true);
-                    transform.GetChild(0).GetChild(0).GetComponent<Animator>().Play("TempHammerAnim");
-                    print(animator.GetBool("IsExtending"));
+                    GetComponent<Animator>().Play("TempHammerAnim");
                     canPopUp = false;
                     GetComponent<HammerHead>().shooting = true;
                 }
