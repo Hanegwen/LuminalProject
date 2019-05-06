@@ -6,7 +6,7 @@ public class HammerHead : MonoBehaviour
 {
     public TrailRenderer hammerTrail;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool shooting = false;
 
     Vector3[] trailPositions = new Vector3[100];

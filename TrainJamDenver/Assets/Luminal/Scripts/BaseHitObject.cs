@@ -88,7 +88,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
             soundManager.PlayHitSound(this.transform);
 
             scoreManager.UpdateScore(scoreAdder);
-            Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
+            Instantiate(hitPointsPrefab, resetPosition, resetRotation, null);
 
 
             RaiseHitEvent();
@@ -104,7 +104,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             scoreManager.UpdateScore(scoreAdder);
-            Instantiate(hitPointsPrefab, transform.position, transform.rotation, null);
+            Instantiate(hitPointsPrefab, resetPosition, resetRotation, null);
             StartCoroutine(RechargeObject());
         }
     }
@@ -130,7 +130,7 @@ public class BaseHitObject : MonoBehaviour, IHitable
         StartCoroutine(Invincible());
         transform.position = resetPosition;
         transform.rotation = resetRotation;
-        Instantiate(respawnParticlePrefab, transform.position, transform.rotation, null);
+        Instantiate(respawnParticlePrefab, resetPosition, resetRotation, null);
     }
 
     IEnumerator Invincible()

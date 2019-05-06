@@ -30,9 +30,9 @@ public class Bullet : MonoBehaviour
                 {
                     GetComponent<Animator>().Play("TempHammerAnim");
                     soundManager.PlayShootSound(this.transform);
-                    GetComponent<Animator>().Play("TempHammerAnim");
                     canPopUp = false;
                     GetComponent<HammerHead>().shooting = true;
+                    StartCoroutine(Recharge());
                 }
             }
         }

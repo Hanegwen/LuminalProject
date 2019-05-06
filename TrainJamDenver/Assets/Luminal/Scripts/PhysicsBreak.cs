@@ -16,11 +16,11 @@ public class PhysicsBreak : MonoBehaviour
 
     public void Explode(float yAdd)
     {
-        GameObject brokenObject = Instantiate(brokenPieces, new Vector3(transform.position.x, transform.position.y + yAdd, transform.position.z), transform.rotation);
+        GameObject brokenObject = Instantiate(brokenPieces, new Vector3(transform.position.x, transform.position.y + yAdd, transform.position.z), transform.rotation, null);
 
-        for (int i = 0; i < brokenObject.transform.childCount; i++)
+        /*for (int i = 0; i < brokenObject.transform.childCount; i++)
         {
             brokenObject.transform.GetChild(i).GetComponent<MeshRenderer>().material = GetComponent<MeshRenderer>().material;
-        }
+        }*/
     }
 }
