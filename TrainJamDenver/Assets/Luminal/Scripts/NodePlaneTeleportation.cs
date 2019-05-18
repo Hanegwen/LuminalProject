@@ -28,6 +28,9 @@ public class NodePlaneTeleportation : MonoBehaviour
     [SerializeField]
     public List<GameObject> Node3;
 
+    [SerializeField]
+    public List<GameObject> Node4;
+
     OVRManager player;
     ChangeColors colorChanger;
     FadeUIElement fader;
@@ -60,6 +63,11 @@ public class NodePlaneTeleportation : MonoBehaviour
         foreach (GameObject node in Node3)
         {
             node.GetComponent<BaseHitObject>().ListNum = 3;
+        }
+
+        foreach (GameObject node in Node4)
+        {
+            node.GetComponent<BaseHitObject>().ListNum = 4;
         }
     }
 
