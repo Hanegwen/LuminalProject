@@ -31,6 +31,13 @@ public class NodePlaneTeleportation : MonoBehaviour
     [SerializeField]
     public List<GameObject> Node4;
 
+    [SerializeField]
+    GameObject hammer;
+    [SerializeField]
+    GameObject chandelier;
+    [SerializeField]
+    Transform chandelierNewTransform;
+
     OVRManager player;
     ChangeColors colorChanger;
     FadeUIElement fader;
@@ -134,6 +141,14 @@ public class NodePlaneTeleportation : MonoBehaviour
                 break;
             case 4:
                 colorChanger.ColorTransition(90, 4, 0.9245f);
+                break;
+            case 5:
+                chandelier.transform.position = chandelierNewTransform.position;
+                chandelier.transform.rotation = chandelierNewTransform.rotation;
+                chandelier.GetComponent<BaseHitObject>().enabled = true;
+                chandelier.GetComponent<Collider>().enabled = true;
+                hammer.transform.position = new Vector3(0.43f, 0, 3.96f);
+                hammer.transform.localScale = new Vector3(2.8f, 2.8f, 2.8f);
                 break;
             default:
                 break;
