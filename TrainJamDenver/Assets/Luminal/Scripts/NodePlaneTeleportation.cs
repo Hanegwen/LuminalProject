@@ -86,14 +86,14 @@ public class NodePlaneTeleportation : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            TeleportToNextNode();
+            StartTeleportProcess();
         }
 
         if(nextNodeIndex - 1 == 0)
         {
             if (Node0.Count == 0)
             {
-                TeleportToNextNode();
+                StartTeleportProcess();
             }
         }
 
@@ -101,7 +101,7 @@ public class NodePlaneTeleportation : MonoBehaviour
         {
             if (Node1.Count == 0)
             {
-                TeleportToNextNode();
+                StartTeleportProcess();
             }
         }
 
@@ -109,14 +109,19 @@ public class NodePlaneTeleportation : MonoBehaviour
         {
             if(Node2.Count == 0)
             {
-                TeleportToNextNode();
+                StartTeleportProcess();
             }
         }
     }
 
-    public void TeleportToNextNode()
+    public void StartTeleportProcess()
     {
         fader.FadeIn(.05f);
+    }
+
+    public void TeleportToNextNode()
+    {
+        //fader.FadeIn(.05f);
 
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
         player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);

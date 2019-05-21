@@ -19,7 +19,8 @@ public class FadeUIElement : MonoBehaviour
     [SerializeField]
     Material black;
 
-    //private CanvasGroup cg;
+    private CanvasGroup cg;
+    public NodePlaneTeleportation npt;
 
     Renderer rend;
 
@@ -37,15 +38,18 @@ public class FadeUIElement : MonoBehaviour
         rend = GetComponent<Renderer>();
         bullet = FindObjectOfType<Bullet>();
 
+        //npt = FindObjectOfType<NodePlaneTeleportation>();
+        //npt = npt.GetComponent<NodePlaneTeleportation>();
+
         rend.material = black;
         rend.material.SetColor("Black", new Vector4(x,y,z,opac));
     }
 
     private void Awake()
     {
-        //cg = this.GetComponent<CanvasGroup>();
+        cg = this.GetComponent<CanvasGroup>();
 
-        if (rend == null)
+        if (cg == null)
         {
             Debug.Log("Warning: No CanvasGroup Found");
         }
@@ -55,7 +59,11 @@ public class FadeUIElement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rend.material.SetColor("_Color", new Vector4(x, y, z, opac));
+        //rend.material.SetColor("_Color", new Vector4(x, y, z, opac));
+        //if (npt == null)
+        //{
+        //    npt = FindObjectOfType<NodePlaneTeleportation>();
+        //}
     }
 
     public void FadeIn(float stepPerFrame)
@@ -68,22 +76,29 @@ public class FadeUIElement : MonoBehaviour
     //Fades a UIElement in
     IEnumerator FadeInCoroutine(float stepPerFrame)
     {
-        while (opac < 255)
+        while (cg.alpha < 1)
         {
-            opac += stepPerFrame;
+            cg.alpha += stepPerFrame;
+            //Debug.Log("FadeIn" + cg.alpha);
 
-            if (opac >= 255 - stepPerFrame && opac != 1)
+            if (cg.alpha >= 1 - stepPerFrame
+                && cg.alpha != 1)
             {
-                opac = 1;
+                cg.alpha = 1;
+                //Debug.Log("FadeIn hit!");
                 break;
             }
-            FadeOut(stepPerFrame);
+
             yield return null;
         }
 
         //rend.interactable = true;
 
         //RaiseFadeInComplete();
+
+        npt.TeleportToNextNode();
+
+        FadeOut(stepPerFrame);
 
         yield return null;
     }
@@ -106,20 +121,22 @@ public class FadeUIElement : MonoBehaviour
     //Fades a UIElement out
     IEnumerator FadeOutCoroutine(float stepPerFrame)
     {
-        while (opac > 0)
+        while (cg.alpha > 0)
         {
-            opac -= stepPerFrame;
+            cg.alpha -= stepPerFrame;
+            //Debug.Log(cg.alpha);
 
-            if (opac <= stepPerFrame
-                && opac != 0)
+
+            if (cg.alpha <= stepPerFrame
+                && cg.alpha != 0)
             {
-                opac = 0;
+                cg.alpha = 0;
+                //Debug.Log("hit!");
                 break;
             }
 
             yield return null;
         }
-
         //rend.interactable = false;
 
         RaiseFadeOutComplete();
