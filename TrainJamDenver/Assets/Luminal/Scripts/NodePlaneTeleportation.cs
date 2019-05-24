@@ -112,11 +112,33 @@ public class NodePlaneTeleportation : MonoBehaviour
                 StartTeleportProcess();
             }
         }
+
+        if(nextNodeIndex - 1 == 3)
+        {
+            if(Node3.Count == 0)
+            {
+                HammerHead hammer = FindObjectOfType<HammerHead>();
+                hammer.enabled = false;
+                StartTeleportProcess();
+
+
+                //StartCoroutine(DelayHammerActive());
+
+            }
+        }
+    }
+
+    IEnumerator DelayHammerActive()
+    {
+        yield return new WaitForSeconds(.5f);
+        HammerHead hammer = FindObjectOfType<HammerHead>();
+
+        hammer.enabled = true;
     }
 
     public void StartTeleportProcess()
     {
-        fader.FadeIn(.05f);
+        fader.FadeIn(.5f);
     }
 
     public void TeleportToNextNode()
@@ -131,6 +153,8 @@ public class NodePlaneTeleportation : MonoBehaviour
         {
             nextNodeIndex = 0;
         }
+
+        print("NODE " + nextNodeIndex);
         
         switch(nextNodeIndex)
         {
