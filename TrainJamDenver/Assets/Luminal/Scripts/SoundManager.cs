@@ -67,6 +67,7 @@ public class SoundManager : MonoBehaviour
                 HammerEmitter.clip = launch1;
                 break;
         }
+        HammerEmitter.loop = false;
         HammerEmitter.Play();
     }
 
