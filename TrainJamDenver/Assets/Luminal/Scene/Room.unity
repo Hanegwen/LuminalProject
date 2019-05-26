@@ -5561,6 +5561,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 100214, guid: f070a32c975ef244e86413a9a248d952, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 100140, guid: f070a32c975ef244e86413a9a248d952, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -8901,6 +8905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokenPieces: {fileID: 5046632332439674930, guid: 380abe5c0d068d548a732536c4705497,
     type: 3}
+  dontBreakMe: 0
 --- !u!114 &1535810590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8932,7 +8937,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300030, guid: f070a32c975ef244e86413a9a248d952, type: 3}
 --- !u!1 &1577281645 stripped
