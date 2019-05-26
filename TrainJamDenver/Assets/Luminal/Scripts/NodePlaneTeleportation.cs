@@ -43,6 +43,8 @@ public class NodePlaneTeleportation : MonoBehaviour
     FadeUIElement fader;
     SoundManager soundManager;
 
+    [SerializeField]
+    GameObject Floor;
 
     // Start is called before the first frame update
     void Start()
@@ -172,6 +174,11 @@ public class NodePlaneTeleportation : MonoBehaviour
                 colorChanger.ColorTransition(90, 4, 0.9245f);
                 break;
             case 5:
+                Floor.GetComponent<BoxCollider>().enabled = false;
+                //Ceiling.GetComponent
+
+                chandelier.GetComponent<PhysicsBreak>().dontBreakMe = true;
+
                 chandelier.transform.position = chandelierNewTransform.position;
                 chandelier.transform.rotation = chandelierNewTransform.rotation;
                 chandelier.GetComponent<BaseHitObject>().enabled = true;

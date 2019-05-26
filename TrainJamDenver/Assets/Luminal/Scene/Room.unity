@@ -2459,6 +2459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liminal_Museum_NewRoofTrim
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 009a6c3ddb8deac40a7a056e227b3d89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 009a6c3ddb8deac40a7a056e227b3d89, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5848,6 +5852,14 @@ PrefabInstance:
     - target: {fileID: 400164, guid: f070a32c975ef244e86413a9a248d952, type: 3}
       propertyPath: m_LocalPosition.z
       value: -7.141
+      objectReference: {fileID: 0}
+    - target: {fileID: 400214, guid: f070a32c975ef244e86413a9a248d952, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.6750001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400214, guid: f070a32c975ef244e86413a9a248d952, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f070a32c975ef244e86413a9a248d952, type: 3}
@@ -15064,6 +15076,11 @@ PrefabInstance:
       propertyPath: chandelierNewTransform
       value: 
       objectReference: {fileID: 994962469}
+    - target: {fileID: 505702014902504926, guid: 31033935714abf9429a4a5fa228a88b6,
+        type: 3}
+      propertyPath: Floor
+      value: 
+      objectReference: {fileID: 1949266596}
     - target: {fileID: 505702014902504924, guid: 31033935714abf9429a4a5fa228a88b6,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -5,12 +5,16 @@ using UnityEngine;
 public class PhysicsBreak : MonoBehaviour
 {
     public GameObject brokenPieces;
+    public bool dontBreakMe = false;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (!dontBreakMe)
         {
-            GetComponent<BaseHitObject>().Hit();
+            if (collision.gameObject.tag == "Floor")
+            {
+                GetComponent<BaseHitObject>().Hit();
+            }
         }
     }
 
