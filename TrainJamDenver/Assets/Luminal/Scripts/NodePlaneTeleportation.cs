@@ -42,6 +42,7 @@ public class NodePlaneTeleportation : MonoBehaviour
     ChangeColors colorChanger;
     FadeUIElement fader;
     SoundManager soundManager;
+    HammerHead[] hammerHead;
 
     [SerializeField]
     GameObject Floor;
@@ -85,13 +86,17 @@ public class NodePlaneTeleportation : MonoBehaviour
     void Update()
     {
 
-
         if (Input.GetKeyDown(KeyCode.D))
         {
             StartTeleportProcess();
         }
 
-        if(nextNodeIndex - 1 == 0)
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[4].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
+        }
+
+        if (nextNodeIndex - 1 == 0)
         {
             if (Node0.Count == 0)
             {
@@ -132,10 +137,12 @@ public class NodePlaneTeleportation : MonoBehaviour
 
     IEnumerator DelayHammerActive()
     {
-        yield return new WaitForSeconds(.5f);
-        HammerHead hammer = FindObjectOfType<HammerHead>();
-
-        hammer.enabled = true;
+        yield return new WaitForSeconds(1f);
+        hammerHead = FindObjectsOfType<HammerHead>();
+        foreach (HammerHead head in hammerHead)
+        {
+            head.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     public void StartTeleportProcess()
@@ -148,7 +155,7 @@ public class NodePlaneTeleportation : MonoBehaviour
         //fader.FadeIn(.05f);
 
         player.transform.position = new Vector3(nodes[nextNodeIndex].transform.position.x, player.transform.position.y, nodes[nextNodeIndex].transform.position.z);
-        player.transform.rotation = new Quaternion(player.transform.rotation.x, nodes[nextNodeIndex].transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
+        player.transform.eulerAngles = new Vector3(player.transform.eulerAngles.x, nodes[nextNodeIndex].transform.eulerAngles.y, player.transform.eulerAngles.z);
         nextNodeIndex++;
 
         if (nextNodeIndex > nodes.Count)
@@ -157,7 +164,14 @@ public class NodePlaneTeleportation : MonoBehaviour
         }
 
         print("NODE " + nextNodeIndex);
-        
+
+        hammerHead = FindObjectsOfType<HammerHead>();
+        foreach (HammerHead head in hammerHead)
+        {
+            head.GetComponent<BoxCollider>().enabled = false;
+        }
+        StartCoroutine(DelayHammerActive());
+
         switch(nextNodeIndex)
         {
             case 1:
@@ -183,8 +197,8 @@ public class NodePlaneTeleportation : MonoBehaviour
                 chandelier.transform.rotation = chandelierNewTransform.rotation;
                 chandelier.GetComponent<BaseHitObject>().enabled = true;
                 chandelier.GetComponent<Collider>().enabled = true;
-                hammer.transform.position = new Vector3(0.43f, 0, 3.96f);
-                hammer.transform.localScale = new Vector3(2.8f, 2.8f, 2.8f);
+                //hammer.transform.position = new Vector3(0.43f, 0, 3.96f);
+                hammer.transform.localScale = new Vector3(2f, 2f, 2f);
                 break;
             default:
                 break;
